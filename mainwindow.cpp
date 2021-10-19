@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "produit.h"
 #include"dialog.h"
-
+//test coonexion
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
