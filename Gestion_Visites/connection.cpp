@@ -12,7 +12,11 @@ db.setUserName("sarra");//inserer nom de l'utilisateur
 db.setPassword("sarra");//inserer mot de passe de cet utilisateur
 
 if (db.open())
-test=true;
+{
+   test=true;
+
+}
+
 
     return  test;
 }

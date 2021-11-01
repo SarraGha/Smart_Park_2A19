@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "visite.h"
+#include "connection.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -24,5 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    Visite Vte;
 };
 #endif // MAINWINDOW_H
