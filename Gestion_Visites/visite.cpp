@@ -65,7 +65,17 @@ bool Visite::supprimer(int idT) //Suppression selon l'identifiant de ticket pass
 
 bool Visite::modifier(QString idT) //Modifier selon l'identifiant de ticket passe en parametre
 {
+    QSqlQuery query;
 
+    query.prepare("UPDATE Visite SET identifiantTicket=:idT, prixTicket=:prixTicket, identifiantVisiteur=:identifiantVisiteur, nbrVisites=:nbrVisites, abonnement=:abonnement, dateVisite=:dateVisite");
+    query.bindValue(":identifiantTicket", idT);
+    query.bindValue(":prixTicket", prixTicket);
+    query.bindValue(":identifiantVisiteur", identifiantVisiteur);
+    query.bindValue(":nbrVisites", nbrVisites);
+    query.bindValue(":abonnement", abonnement);
+    query.bindValue(":dateVisite", dateVisite);
+
+    return query.exec();
 }
 
 QSqlQueryModel * Visite::afficher()
