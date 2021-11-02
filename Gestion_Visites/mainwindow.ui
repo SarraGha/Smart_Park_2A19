@@ -172,7 +172,7 @@
      <attribute name="title">
       <string>Gestion des Visites</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="photo">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -256,7 +256,7 @@
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="pdf">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -286,10 +286,10 @@
      <widget class="QTableView" name="tableView">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>640</y>
-        <width>761</width>
-        <height>181</height>
+        <x>370</x>
+        <y>610</y>
+        <width>781</width>
+        <height>211</height>
        </rect>
       </property>
       <property name="font">
@@ -305,8 +305,8 @@
      <widget class="QPushButton" name="modifier">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>550</y>
+        <x>880</x>
+        <y>520</y>
         <width>120</width>
         <height>30</height>
        </rect>
@@ -373,7 +373,7 @@
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="statistiques">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -429,7 +429,7 @@
      <widget class="QPushButton" name="ajouter">
       <property name="geometry">
        <rect>
-        <x>890</x>
+        <x>770</x>
         <y>480</y>
         <width>120</width>
         <height>30</height>
@@ -479,7 +479,7 @@
        <string>Non</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="excel">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -557,8 +557,8 @@
      <widget class="QPushButton" name="trier">
       <property name="geometry">
        <rect>
-        <x>910</x>
-        <y>600</y>
+        <x>920</x>
+        <y>570</y>
         <width>120</width>
         <height>30</height>
        </rect>
@@ -586,7 +586,7 @@
         <normaloff>../../../icone/1x/tri.png</normaloff>../../../icone/1x/tri.png</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
+     <widget class="QPushButton" name="offre">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -656,8 +656,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QPushButton" name="supprimer">
       <property name="geometry">
        <rect>
-        <x>830</x>
-        <y>550</y>
+        <x>640</x>
+        <y>480</y>
         <width>120</width>
         <height>30</height>
        </rect>
@@ -733,8 +733,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QPushButton" name="rechercher">
       <property name="geometry">
        <rect>
-        <x>610</x>
-        <y>600</y>
+        <x>600</x>
+        <y>570</y>
         <width>120</width>
         <height>30</height>
        </rect>
@@ -765,8 +765,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QComboBox" name="comboBox">
       <property name="geometry">
        <rect>
-        <x>1040</x>
-        <y>600</y>
+        <x>1050</x>
+        <y>570</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -795,8 +795,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QLineEdit" name="lineEdit_rechercher">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>600</y>
+        <x>370</x>
+        <y>570</y>
         <width>221</width>
         <height>30</height>
        </rect>
@@ -916,8 +916,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>550</y>
+        <x>730</x>
+        <y>520</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -929,8 +929,8 @@ color: rgb(212, 239, 223);</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>550</y>
+        <x>500</x>
+        <y>520</y>
         <width>221</width>
         <height>31</height>
        </rect>
@@ -948,6 +948,11 @@ color: rgb(212, 239, 223);</string>
        <string>Entrez un identifiant Ticket</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Statistiques</string>
+     </attribute>
     </widget>
    </widget>
   </widget>

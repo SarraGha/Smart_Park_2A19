@@ -34,7 +34,7 @@ bool Visite::ajouter()
    QSqlQuery query;
    //QString res = QString::number(identifiantTicket);
 
-   query.prepare("insert into Visite(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites, abonnement, dateVisite)"
+   query.prepare("INSERT INTO Visites(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites, abonnement, dateVisite)"
                  "values(:identifiantTicket, :prixTicket, :identifiantVisiteur, :nbrVisites, :abonnement, :dateVisite)");
 
    //création des variables liées
@@ -55,7 +55,7 @@ bool Visite::supprimer(int idT) //Suppression selon l'identifiant de ticket pass
     QSqlQuery query;
     QString res=QString::number(idT);
 
-    query.prepare("Delete from visite where identifiantTicket= :idT");
+    query.prepare("DELETE * FROM Visites where identifiantTicket= :idT");
     query.bindValue(":idT", res);
 
     return query.exec();
@@ -67,7 +67,7 @@ bool Visite::modifier(QString idT) //Modifier selon l'identifiant de ticket pass
 {
     QSqlQuery query;
 
-    query.prepare("UPDATE Visite SET identifiantTicket=:idT, prixTicket=:prixTicket, identifiantVisiteur=:identifiantVisiteur, nbrVisites=:nbrVisites, abonnement=:abonnement, dateVisite=:dateVisite");
+    query.prepare("UPDATE Visites SET identifiantTicket=:idT, prixTicket=:prixTicket, identifiantVisiteur=:identifiantVisiteur, nbrVisites=:nbrVisites, abonnement=:abonnement, dateVisite=:dateVisite");
     query.bindValue(":identifiantTicket", idT);
     query.bindValue(":prixTicket", prixTicket);
     query.bindValue(":identifiantVisiteur", identifiantVisiteur);
@@ -97,7 +97,15 @@ void Visite::trier(QString ordre)
 {
 
 }
+
+
 bool Visite::rechercher(QString critere)
 {
+    QSqlQuery query;
 
+
+    query.prepare("SELECT * FROM Visites where identifiantTicket= :critere");
+    query.bindValue(":identifiantTicket", critere);
+
+    return query.exec();
 }

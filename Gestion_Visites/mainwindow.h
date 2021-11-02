@@ -18,12 +18,21 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
     void on_ajouter_clicked();
 
     void on_supprimer_clicked();
 
     void on_modifier_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_excel_clicked();
+
+    void on_pdf_clicked();
+
+    void on_rechercher_clicked();
 
 private:
     Ui::MainWindow *ui;

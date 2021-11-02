@@ -6,6 +6,8 @@
 #include <QSqlQueryModel>
 
 
+
+
 /*typedef struct
 {
     int jour;
