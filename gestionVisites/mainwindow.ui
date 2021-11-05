@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1300</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab_Accueil">
+     <attribute name="title">
+      <string>Page d'Accueil</string>
+     </attribute>
+     <widget class="QLabel" name="backgroundAccueil">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-350</y>
+        <width>751</width>
+        <height>1181</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>1</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../BACKGROUNDS/1x/1x/1x/Plan de travail 35.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>170</y>
+        <width>201</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../icone/1x/id.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="texteIdentifiantAccueil">
+      <property name="geometry">
+       <rect>
+        <x>900</x>
+        <y>420</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Identifiant :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="identifiantAccueil">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>420</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="texteMotDePasseAccueil">
+      <property name="geometry">
+       <rect>
+        <x>880</x>
+        <y>470</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Mot de Passe :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="motDePasseAccueil">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>470</y>
+        <width>150</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_acceder">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>520</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Accéder</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_annuler">
+      <property name="geometry">
+       <rect>
+        <x>1050</x>
+        <y>520</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Annuler</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_Gestion">
+     <attribute name="title">
+      <string>Gestion Visites</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1300</width>
+        <height>831</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(17, 122, 101);
+</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_principale">
+       <attribute name="title">
+        <string>Page Principale</string>
+       </attribute>
+       <widget class="QLabel" name="titre_gestioinDesVisites">
+        <property name="geometry">
+         <rect>
+          <x>455</x>
+          <y>20</y>
+          <width>390</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>20</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(212, 239, 223);</string>
+        </property>
+        <property name="text">
+         <string>Gestion des Visites</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>70</y>
+          <width>600</width>
+          <height>3</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteTicket">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>110</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(212, 239, 223);
+</string>
+        </property>
+        <property name="text">
+         <string>Ticket</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteIdentifiantTicket">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>150</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Identifiant Ticket</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_IdentifiantTicket">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>150</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textePrixTicket">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>150</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Prix Ticket</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_PrixTicket">
+        <property name="geometry">
+         <rect>
+          <x>750</x>
+          <y>150</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteIdnetifiantVisiteur">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>250</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Identifiant Visiteur</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_IdentifiantVisiteur">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>250</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteNbrVisites">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>250</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Nombre de Visites</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteVisiteur">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>200</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(212, 239, 223);
+</string>
+        </property>
+        <property name="text">
+         <string>Visiteur</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_nbrVisites">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>250</y>
+          <width>50</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_dateVisite">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>310</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteDateVisite">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>310</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Date de la Visite</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_abonnement">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>310</y>
+          <width>73</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Oui</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Non</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="texteAbonnement">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>310</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Est-t-il abonné?</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_BD">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>520</y>
+          <width>821</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_rechercher">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>480</y>
+          <width>180</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Rechercher">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>480</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Rechercher</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/recherche.png</normaloff>../../../icone/1x/recherche.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Trier">
+        <property name="geometry">
+         <rect>
+          <x>790</x>
+          <y>480</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Trier</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/tri.png</normaloff>../../../icone/1x/tri.png</iconset>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_trier">
+        <property name="geometry">
+         <rect>
+          <x>920</x>
+          <y>480</y>
+          <width>141</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Ordre Croissant</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ordre Décroissant</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Ajouter">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>270</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/+.png</normaloff>../../../icone/1x/+.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Modifier">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>310</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/mise à jour.png</normaloff>../../../icone/1x/mise à jour.png</iconset>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteSupprimer">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>400</y>
+          <width>321</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Entrez un identifiant de ticket à supprimer :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_supprimer">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>400</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Supprimer">
+        <property name="geometry">
+         <rect>
+          <x>770</x>
+          <y>400</y>
+          <width>120</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/-.png</normaloff>../../../icone/1x/-.png</iconset>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_Statistiques">
+       <attribute name="title">
+        <string>Statistiques</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_liste">
+       <attribute name="title">
+        <string>Liste des Animaux Adoptés</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_laUne">
+       <attribute name="title">
+        <string>à la Une</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_offres">
+       <attribute name="title">
+        <string>Calcul d'Offres</string>
+       </attribute>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
