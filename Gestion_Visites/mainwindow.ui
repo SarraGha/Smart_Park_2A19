@@ -45,8 +45,8 @@
      <widget class="QLabel" name="id">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>460</y>
+        <x>880</x>
+        <y>430</y>
         <width>111</width>
         <height>31</height>
        </rect>
@@ -70,8 +70,8 @@
      <widget class="QLabel" name="MDP">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>520</y>
+        <x>870</x>
+        <y>490</y>
         <width>131</width>
         <height>31</height>
        </rect>
@@ -95,8 +95,8 @@
      <widget class="QLineEdit" name="lineEdit_5">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>460</y>
+        <x>1010</x>
+        <y>430</y>
         <width>151</width>
         <height>31</height>
        </rect>
@@ -109,8 +109,8 @@
      <widget class="QLineEdit" name="lineEdit_6">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>520</y>
+        <x>1010</x>
+        <y>490</y>
         <width>151</width>
         <height>31</height>
        </rect>
@@ -122,8 +122,8 @@
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>170</y>
+        <x>930</x>
+        <y>140</y>
         <width>201</width>
         <height>261</height>
        </rect>
@@ -149,8 +149,8 @@
      <widget class="QDialogButtonBox" name="buttonBox">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>580</y>
+        <x>930</x>
+        <y>550</y>
         <width>192</width>
         <height>28</height>
        </rect>
@@ -165,6 +165,22 @@
       </property>
       <property name="standardButtons">
        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-390</y>
+        <width>751</width>
+        <height>1301</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../BACKGROUNDS/1x/1x/1x/Plan de travail 35.png</pixmap>
       </property>
      </widget>
     </widget>

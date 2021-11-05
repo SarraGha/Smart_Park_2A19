@@ -26,8 +26,6 @@ private slots:
 
     void on_modifier_clicked();
 
-    void on_pushButton_8_clicked();
-
     void on_excel_clicked();
 
     void on_pdf_clicked();

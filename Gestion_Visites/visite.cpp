@@ -15,7 +15,7 @@ Visite::Visite()
     dateVisite.annee=0;*/
 }
 
-Visite::Visite(QString identifiantTicket, float prixTicket, QString identifiantVisiteur, int nbrVisites, int abonnement, QString dateVisite)
+Visite::Visite(QString identifiantTicket, float prixTicket, QString identifiantVisiteur, int nbrVisites,  QString dateVisite, int abonnement)
 {
     this->identifiantTicket=identifiantTicket;
     this->prixTicket=prixTicket;
@@ -34,8 +34,8 @@ bool Visite::ajouter()
    QSqlQuery query;
    //QString res = QString::number(identifiantTicket);
 
-   query.prepare("INSERT INTO Visites(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites, abonnement, dateVisite)"
-                 "values(:identifiantTicket, :prixTicket, :identifiantVisiteur, :nbrVisites, :abonnement, :dateVisite)");
+   query.prepare("INSERT INTO Visites(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites,  dateVisite, abonnement)"
+                 "values(:identifiantTicket, :prixTicket, :identifiantVisiteur, :nbrVisites, :dateVisite,:abonnement)");
 
    //création des variables liées
    query.bindValue(":identifiantTicket", identifiantTicket);

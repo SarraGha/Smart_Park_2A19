@@ -29,11 +29,11 @@ class Visite
 public:
     //Constructeurs
     Visite();
-    Visite(QString, float, QString, int, int, QString);
+    Visite(QString, float, QString, int, QString, int);
 
     //Getters
     QString get_identifiantTicket(){return identifiantTicket;};
-    float get_prixTicket (float prixTicket){return prixTicket;};
+    float get_prixTicket (){return prixTicket;};
     QString get_identifiantVisiteur(){return identifiantVisiteur;};
     int get_nbrVisites(){return nbrVisites;};
     int get_abonnement (){return abonnement;};

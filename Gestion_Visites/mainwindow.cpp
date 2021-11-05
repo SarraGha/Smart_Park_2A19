@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QDate>
 #include <QObject>
+
+#include <QDebug>
 /*
  * biblioyheque pdf
 #include <QPdfDocument>
@@ -36,18 +38,21 @@ void MainWindow::on_ajouter_clicked()
     QString identifiantVisiteur = ui->lineEdit_idVisiteur->text();
     QString dateVisite = ui->dateEdit->date().toString();
     int nbrVisites = ui->spinBox->text().toInt();
+
     //int abonnement = ui->spinBox->text().toInt();
 
 
     int abonnement=0;
 
 
-    if(ui->checkBox_oui->checkState() == true)
+
+     if(ui->checkBox_oui->checkState() == true)
     {
         abonnement=1;
     }
+    qDebug() <<abonnement;
 
-    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites, abonnement, dateVisite);
+    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites,  dateVisite, abonnement);
 
     bool test = V.ajouter();
 
@@ -120,7 +125,7 @@ void MainWindow::on_modifier_clicked()
         abonnement=1;
     }
 
-    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites, abonnement, dateVisite);
+    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nbrVisites,  dateVisite, abonnement);
 
     bool test = V.modifier(identifiantTicket);
 
