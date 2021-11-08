@@ -81,4 +81,38 @@ QSqlQueryModel * Visite::afficher()
     return model;
 }
 
+QSqlQueryModel * Visite::rechercher(const QString &critere)
+{
+    QSqlQueryModel*model = new QSqlQueryModel();
 
+    model->setQuery("select * from VISITES where (identifiantTicket LIKE '"+critere+"%')");
+
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("identifiantTicket"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("prixTicket"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("identifiantVisiteur"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombreVisites"));
+    model->setHeaderData(4,Qt::Horizontal, QObject::tr("dateVisite"));
+    model->setHeaderData(5,Qt::Horizontal, QObject::tr("abonnement"));
+
+    return model;
+}
+
+QSqlQueryModel * Visite::trier(const QString &critere)
+{
+    QSqlQueryModel*model = new QSqlQueryModel();
+
+
+        model->setQuery("select * from VISITES order by prixTicket "+critere+"");
+
+        model->setHeaderData(0,Qt::Horizontal, QObject::tr("identifiantTicket"));
+        model->setHeaderData(1,Qt::Horizontal, QObject::tr("prixTicket"));
+        model->setHeaderData(2,Qt::Horizontal, QObject::tr("identifiantVisiteur"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombreVisites"));
+        model->setHeaderData(4,Qt::Horizontal, QObject::tr("dateVisite"));
+        model->setHeaderData(5,Qt::Horizontal, QObject::tr("abonnement"));
+
+
+
+    return model;
+
+}

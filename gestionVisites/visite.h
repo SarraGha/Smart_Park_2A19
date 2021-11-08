@@ -21,7 +21,7 @@ public:
 
     //Getters
     QString get_identifiantTicket(){return identifiantTicket;};
-    float get_prixTicket(){return prixTicket;};
+    int get_prixTicket(){return prixTicket;};
     QString get_identifiantVisiteur(){return identifiantVisiteur;};
     int get_nombreVisites(){return nombreVisites;};
     QString get_dateVisite(){return dateVisite;};
@@ -29,7 +29,7 @@ public:
 
     //Setters
     void set_identifiantTicket(QString idT){identifiantTicket=idT;};
-    void set_prixTicket(float prixT){prixTicket=prixT;};
+    void set_prixTicket(int prixT){prixTicket=prixT;};
     void set_identifiantVisiteur(QString idV){identifiantVisiteur=idV;};
     void set_nombreVisites(int nbrV){nombreVisites=nbrV;};
     void set_dateVisite(QString dateV){dateVisite=dateV;};
@@ -39,9 +39,9 @@ public:
     bool ajouter();
     bool supprimer(QString);
     bool modifier(QString);
-    QSqlQueryModel* afficher();
-    bool rechercher(QString critere);
-    void trier(QString ordre);
+    QSqlQueryModel * afficher();
+    QSqlQueryModel * rechercher(const QString &critere);
+    QSqlQueryModel * trier(const QString &critere);
 };
 
 #endif // VISITE_H

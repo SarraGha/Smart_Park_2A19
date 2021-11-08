@@ -23,6 +23,10 @@ private slots:
 
     void on_pushButton_Modifier_clicked();
 
+    void on_lineEdit_rechercher_textChanged(const QString &critere);
+
+    void on_pushButton_Trier_clicked();
+
 private:
     Ui::MainWindow *ui;
 
