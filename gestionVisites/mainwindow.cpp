@@ -145,24 +145,34 @@ void MainWindow::on_pushButton_Supprimer_clicked()
     int reponse = QMessageBox::question(this,"Confirmation","Voulez-vous vraiment supprimer cette Visite (ou ces Visites) ?", QMessageBox ::Yes | QMessageBox::No);
     if (reponse == QMessageBox::Yes)
     {
-        bool res ;
-        Visite V;
-        QString q ;
+        bool test ;
+
+        QString idT ;
         QModelIndex index ;
         QModelIndexList selection = ui->tableView_BD->selectionModel()->selectedRows();
 
         //parcourir les index. Utile particulièrement pour une sélection multiple
+        //selection.count() permet de parcourir les données sélectionnés
         for (int i =0;i<selection.count();i++)
         {
             index=selection.at(i);
-            q=QVariant(ui->tableView_BD->model()->index(index.row(),0).data()).toString();
-            res = V.supprimer(q) ;
-                if (res == QDialog::Accepted)
+
+
+            //QVariant().toString = Retourne le QVariant sous forme d'un QString
+            //index.row() car l'index est de type QModelIndex et on doit connaître la ligne exacte du tab en tant que int
+
+            idT=QVariant(ui->tableView_BD->model()->index(index.row(),0).data()).toString();
+
+            test = Vte.supprimer(idT) ;
+
+                if (test)
                 {
-                        ui->tableView_BD->setModel(Vte.afficher());
-                        QMessageBox::information(nullptr, QObject::tr("Supprimer une Visite"),
-                        QObject::tr("Visite supprimée.\n"
-                        "Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
+                    //actualisation de l'affichage
+                    ui->tableView_BD->setModel(Vte.afficher());
+
+                    QMessageBox::information(nullptr, QObject::tr("Supprimer une Visite"),
+                    QObject::tr("Visite supprimée.\n"
+                                 "Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
                 }
         }
 
