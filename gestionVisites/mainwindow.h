@@ -25,7 +25,7 @@ private slots:
 
     void on_lineEdit_rechercher_textChanged(const QString &critere);
 
-    void on_pushButton_Trier_clicked();
+    void on_comboBox_trier_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

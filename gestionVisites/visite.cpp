@@ -1,5 +1,6 @@
 #include "visite.h"
 
+
 Visite::Visite()
 {
     identifiantTicket="";
@@ -97,22 +98,28 @@ QSqlQueryModel * Visite::rechercher(const QString &critere)
     return model;
 }
 
-QSqlQueryModel * Visite::trier(const QString &critere)
+QSqlQueryModel * Visite::trier(QString critere)
 {
-    QSqlQueryModel*model = new QSqlQueryModel();
+    QSqlQueryModel * model = new QSqlQueryModel();
+    QSqlQuery *query=new QSqlQuery;
 
+    query->prepare(critere);
+    query->exec();
 
-        model->setQuery("select * from VISITES order by prixTicket "+critere+"");
-
-        model->setHeaderData(0,Qt::Horizontal, QObject::tr("identifiantTicket"));
-        model->setHeaderData(1,Qt::Horizontal, QObject::tr("prixTicket"));
-        model->setHeaderData(2,Qt::Horizontal, QObject::tr("identifiantVisiteur"));
-        model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombreVisites"));
-        model->setHeaderData(4,Qt::Horizontal, QObject::tr("dateVisite"));
-        model->setHeaderData(5,Qt::Horizontal, QObject::tr("abonnement"));
-
-
+    model->setQuery(*query);
+    model->setHeaderData(0,Qt::Horizontal, QObject::tr("identifiantTicket"));
+    model->setHeaderData(1,Qt::Horizontal, QObject::tr("prixTicket"));
+    model->setHeaderData(2,Qt::Horizontal, QObject::tr("identifiantVisiteur"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("nombreVisites"));
+    model->setHeaderData(4,Qt::Horizontal, QObject::tr("dateVisite"));
+    model->setHeaderData(5,Qt::Horizontal, QObject::tr("abonnement"));
 
     return model;
-
 }
+
+/*
+void Visite::ouvrirPDF()
+{
+    ShellExecuteA(NULL,"open","doc.pdf",0,0,SW_NORMAL);
+}
+*/

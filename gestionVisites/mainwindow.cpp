@@ -121,12 +121,12 @@ void MainWindow::on_pushButton_Ajouter_clicked()
             ui->tableView_BD->setModel(Vte.afficher());
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
-                                     QObject::tr("Ajout effectué.\n""Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Ajout effectué.\n""Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
         }
 
         else
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
-                                     QObject::tr("Ajout non effectué.\n""Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Ajout non effectué.\n""Vérifiez les données."), QMessageBox::Cancel);
     }
 }
 
@@ -171,13 +171,13 @@ void MainWindow::on_pushButton_Supprimer_clicked()
             ui->tableView_BD->setModel(Vte.afficher());
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
-                                     QObject::tr("Suppression effectuée\n", "Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Suppression effectuée\n", "Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
 
         }
         else
         {
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
-                                     QObject::tr("Suppression non effectuée\n", "Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Suppression non effectuée\n", "Vérifiez les données."), QMessageBox::Cancel);
         }
     }
 
@@ -269,13 +269,13 @@ void MainWindow::on_pushButton_Modifier_clicked()
             ui->tableView_BD->setModel(Vte.afficher());
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
-                                     QObject::tr("Modification effectuée\n", "Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Modification effectuée\n", "Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
 
         }
         else
         {
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
-                                     QObject::tr("Modification non effectuée\n", "Click cancel to exit."), QMessageBox::Cancel);
+                                     QObject::tr("Modification non effectuée\n", "Vérifiez les données."), QMessageBox::Cancel);
         }
     }
 
@@ -286,22 +286,25 @@ void MainWindow::on_lineEdit_rechercher_textChanged(const QString &critere)
     ui->tableView_BD->setModel(Vte.rechercher(critere));
 }
 
-
-
-
-void MainWindow::on_pushButton_Trier_clicked()
+void MainWindow::on_comboBox_trier_currentIndexChanged(int index)
 {
     QString critere;
-    if(ui->comboBox_trier->currentData() == "Ordre Croissant")
+    if(index==2)
     {
-        critere="ASC";
-    }
-    else
-    {
-        critere="DESC";
+        critere="select * from Visites order by prixTicket DESC";
+        ui->tableView_BD->setModel(Vte.trier(critere));
     }
 
-    ui->tableView_BD->setModel(Vte.trier(critere));
+    if(index==1)
+    {
+        critere="select * from Visites order by prixTicket ASC";
+        ui->tableView_BD->setModel(Vte.trier(critere));
+    }
+
+    if(index==0)
+    {
+        ui->tableView_BD->setModel(Vte.afficher());
+    }
 }
 
 
@@ -309,3 +312,5 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+

@@ -76,7 +76,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../../icone/1x/id.png</pixmap>
+       <pixmap>../../../icone/1x/1x/1x/id.png</pixmap>
       </property>
      </widget>
      <widget class="QLabel" name="texteIdentifiantAccueil">
@@ -267,7 +267,7 @@
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>110</y>
+          <y>120</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -302,8 +302,8 @@
        <widget class="QLabel" name="texteIdentifiantTicket">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>150</y>
+          <x>160</x>
+          <y>170</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -324,8 +324,8 @@
        <widget class="QLineEdit" name="lineEdit_IdentifiantTicket">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>150</y>
+          <x>300</x>
+          <y>170</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -346,8 +346,8 @@
        <widget class="QLabel" name="textePrixTicket">
         <property name="geometry">
          <rect>
-          <x>660</x>
-          <y>150</y>
+          <x>210</x>
+          <y>240</y>
           <width>81</width>
           <height>21</height>
          </rect>
@@ -368,8 +368,8 @@
        <widget class="QLineEdit" name="lineEdit_PrixTicket">
         <property name="geometry">
          <rect>
-          <x>750</x>
-          <y>150</y>
+          <x>300</x>
+          <y>240</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -390,8 +390,8 @@
        <widget class="QLabel" name="texteIdnetifiantVisiteur">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>250</y>
+          <x>570</x>
+          <y>170</y>
           <width>141</width>
           <height>21</height>
          </rect>
@@ -412,8 +412,8 @@
        <widget class="QLineEdit" name="lineEdit_IdentifiantVisiteur">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>250</y>
+          <x>730</x>
+          <y>170</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -434,8 +434,8 @@
        <widget class="QLabel" name="texteNbrVisites">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>250</y>
+          <x>910</x>
+          <y>170</y>
           <width>131</width>
           <height>21</height>
          </rect>
@@ -456,8 +456,8 @@
        <widget class="QLabel" name="texteVisiteur">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>200</y>
+          <x>830</x>
+          <y>120</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -492,8 +492,8 @@
        <widget class="QSpinBox" name="spinBox_nbrVisites">
         <property name="geometry">
          <rect>
-          <x>840</x>
-          <y>250</y>
+          <x>1060</x>
+          <y>170</y>
           <width>50</width>
           <height>30</height>
          </rect>
@@ -511,8 +511,8 @@
        <widget class="QDateEdit" name="dateEdit_dateVisite">
         <property name="geometry">
          <rect>
-          <x>490</x>
-          <y>310</y>
+          <x>730</x>
+          <y>240</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -530,8 +530,8 @@
        <widget class="QLabel" name="texteDateVisite">
         <property name="geometry">
          <rect>
-          <x>340</x>
-          <y>310</y>
+          <x>580</x>
+          <y>240</y>
           <width>141</width>
           <height>21</height>
          </rect>
@@ -552,8 +552,8 @@
        <widget class="QComboBox" name="comboBox_abonnement">
         <property name="geometry">
          <rect>
-          <x>820</x>
-          <y>310</y>
+          <x>1040</x>
+          <y>240</y>
           <width>73</width>
           <height>30</height>
          </rect>
@@ -581,8 +581,8 @@
        <widget class="QLabel" name="texteAbonnement">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>310</y>
+          <x>910</x>
+          <y>240</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -616,7 +616,7 @@
        <widget class="QLineEdit" name="lineEdit_rechercher">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>290</x>
           <y>480</y>
           <width>180</width>
           <height>30</height>
@@ -636,63 +636,6 @@
         </property>
         <property name="text">
          <string/>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_Rechercher">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>480</y>
-          <width>120</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-</string>
-        </property>
-        <property name="text">
-         <string>Rechercher</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../icone/1x/recherche.png</normaloff>../../../icone/1x/recherche.png</iconset>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_Trier">
-        <property name="geometry">
-         <rect>
-          <x>790</x>
-          <y>480</y>
-          <width>120</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Trier</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>../../../icone/1x/tri.png</normaloff>../../../icone/1x/tri.png</iconset>
         </property>
        </widget>
        <widget class="QComboBox" name="comboBox_trier">
@@ -715,6 +658,11 @@
         </property>
         <item>
          <property name="text">
+          <string>&lt;choisir un ordre&gt;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
           <string>Ordre Croissant</string>
          </property>
         </item>
@@ -727,8 +675,8 @@
        <widget class="QPushButton" name="pushButton_Ajouter">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>270</y>
+          <x>480</x>
+          <y>330</y>
           <width>120</width>
           <height>30</height>
          </rect>
@@ -756,8 +704,8 @@
        <widget class="QPushButton" name="pushButton_Modifier">
         <property name="geometry">
          <rect>
-          <x>930</x>
-          <y>310</y>
+          <x>610</x>
+          <y>330</y>
           <width>120</width>
           <height>30</height>
          </rect>
@@ -785,8 +733,8 @@
        <widget class="QLabel" name="texteSupprimer">
         <property name="geometry">
          <rect>
-          <x>270</x>
-          <y>400</y>
+          <x>350</x>
+          <y>410</y>
           <width>321</width>
           <height>31</height>
          </rect>
@@ -807,8 +755,8 @@
        <widget class="QLineEdit" name="lineEdit_supprimer">
         <property name="geometry">
          <rect>
-          <x>610</x>
-          <y>400</y>
+          <x>690</x>
+          <y>410</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -829,8 +777,8 @@
        <widget class="QPushButton" name="pushButton_Supprimer">
         <property name="geometry">
          <rect>
-          <x>770</x>
-          <y>400</y>
+          <x>850</x>
+          <y>410</y>
           <width>120</width>
           <height>30</height>
          </rect>
@@ -853,6 +801,57 @@
         <property name="icon">
          <iconset>
           <normaloff>../../../icone/1x/-.png</normaloff>../../../icone/1x/-.png</iconset>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>480</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../icone/1x/1x/1x/recherchePetit.png</pixmap>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>370</y>
+          <width>1171</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textePrixTicket_2">
+        <property name="geometry">
+         <rect>
+          <x>710</x>
+          <y>480</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Trier selon le prix de ticket :</string>
         </property>
        </widget>
       </widget>

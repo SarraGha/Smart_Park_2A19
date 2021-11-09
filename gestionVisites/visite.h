@@ -5,6 +5,11 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
+/*
+//bibliothèque PDF
+#include <shellapi.h>
+#include <windows.h>
+*/
 class Visite
 {
     QString identifiantTicket;
@@ -40,8 +45,13 @@ public:
     bool supprimer(QString);
     bool modifier(QString);
     QSqlQueryModel * afficher();
+
+    //Métiers
     QSqlQueryModel * rechercher(const QString &critere);
-    QSqlQueryModel * trier(const QString &critere);
+    QSqlQueryModel * trier(QString critere);
+    //void ouvrirPDF();
+
+
 };
 
 #endif // VISITE_H
