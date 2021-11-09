@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
+
 /*
 //bibliothèque PDF
 #include <shellapi.h>
@@ -45,6 +46,7 @@ public:
     bool supprimer(QString);
     bool modifier(QString);
     QSqlQueryModel * afficher();
+
 
     //Métiers
     QSqlQueryModel * rechercher(const QString &critere);

@@ -641,9 +641,9 @@
        <widget class="QComboBox" name="comboBox_trier">
         <property name="geometry">
          <rect>
-          <x>920</x>
+          <x>900</x>
           <y>480</y>
-          <width>141</width>
+          <width>161</width>
           <height>30</height>
          </rect>
         </property>
@@ -689,6 +689,9 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
 </string>
@@ -718,6 +721,9 @@
           <bold>true</bold>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
 </string>
@@ -735,7 +741,7 @@
          <rect>
           <x>350</x>
           <y>410</y>
-          <width>321</width>
+          <width>431</width>
           <height>31</height>
          </rect>
         </property>
@@ -749,35 +755,13 @@
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>Entrez un identifiant de ticket à supprimer :</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_supprimer">
-        <property name="geometry">
-         <rect>
-          <x>690</x>
-          <y>410</y>
-          <width>140</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="inputMethodHints">
-         <set>Qt::ImhNone</set>
+         <string>Sélectionnez une line de la table pour supprimer une visite</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_Supprimer">
         <property name="geometry">
          <rect>
-          <x>850</x>
+          <x>790</x>
           <y>410</y>
           <width>120</width>
           <height>30</height>
@@ -790,6 +774,9 @@
           <weight>75</weight>
           <bold>true</bold>
          </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
@@ -835,7 +822,7 @@
        <widget class="QLabel" name="textePrixTicket_2">
         <property name="geometry">
          <rect>
-          <x>710</x>
+          <x>690</x>
           <y>480</y>
           <width>201</width>
           <height>21</height>

@@ -123,3 +123,6 @@ void Visite::ouvrirPDF()
     ShellExecuteA(NULL,"open","doc.pdf",0,0,SW_NORMAL);
 }
 */
+
+
+

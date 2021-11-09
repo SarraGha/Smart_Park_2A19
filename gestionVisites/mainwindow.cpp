@@ -19,8 +19,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableView_BD->setModel(Vte.afficher());
-    ui->dateEdit_dateVisite->setDate(QDate::currentDate());
     setWindowTitle("Smart Zoo");
+
+
+    ui->dateEdit_dateVisite->setDate(QDate::currentDate());
+    ui->lineEdit_PrixTicket->setValidator(new QIntValidator(0, 99, this));
+    ui->lineEdit_PrixTicket->setMaxLength(2);
+    ui->lineEdit_IdentifiantTicket->setMaxLength(8);
+    ui->lineEdit_IdentifiantVisiteur->setMaxLength(8);
+    ui->lineEdit_rechercher->setMaxLength(8);
+
 }
 
 
@@ -33,6 +41,7 @@ void MainWindow::on_pushButton_Ajouter_clicked()
     int nombreVisites = ui->spinBox_nbrVisites->text().toInt();
     QString dateVisite = ui->dateEdit_dateVisite->date().toString();
     QString abonnement = ui->comboBox_abonnement->currentText();
+
 
 
 
@@ -126,12 +135,47 @@ void MainWindow::on_pushButton_Ajouter_clicked()
 
         else
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
-                                     QObject::tr("Ajout non effectué.\n""Vérifiez les données."), QMessageBox::Cancel);
+                                     QObject::tr("Ajout non effectué.\n""Vérifiez l'Identifiant Ticket."), QMessageBox::Cancel);
     }
 }
 
 void MainWindow::on_pushButton_Supprimer_clicked()
 {
+
+    int reponse = QMessageBox::question(this,"Confirmation","Voulez-vous vraiment supprimer cette Visite (ou ces Visites) ?", QMessageBox ::Yes | QMessageBox::No);
+    if (reponse == QMessageBox::Yes)
+    {
+        bool res ;
+        Visite V;
+        QString q ;
+        QModelIndex index ;
+        QModelIndexList selection = ui->tableView_BD->selectionModel()->selectedRows();
+
+        //parcourir les index. Utile particulièrement pour une sélection multiple
+        for (int i =0;i<selection.count();i++)
+        {
+            index=selection.at(i);
+            q=QVariant(ui->tableView_BD->model()->index(index.row(),0).data()).toString();
+            res = V.supprimer(q) ;
+                if (res == QDialog::Accepted)
+                {
+                        ui->tableView_BD->setModel(Vte.afficher());
+                        QMessageBox::information(nullptr, QObject::tr("Supprimer une Visite"),
+                        QObject::tr("Visite supprimée.\n"
+                        "Cliquez sur 'Cancel' pour quitter."), QMessageBox::Cancel);
+                }
+        }
+
+    }
+    else if (reponse == QMessageBox::No)
+    {
+        QMessageBox::critical(this, "Annulation", "La suppression de cette Visite (ou ces Visites) a été annuler !");
+    }
+
+
+
+    /*
+     * ancien code supprimer
     QString idT = ui->lineEdit_supprimer->text();
     bool test_idT=true;
 
@@ -177,9 +221,9 @@ void MainWindow::on_pushButton_Supprimer_clicked()
         else
         {
             QMessageBox::critical(nullptr, QObject::tr("Not OK"),
-                                     QObject::tr("Suppression non effectuée\n", "Vérifiez les données."), QMessageBox::Cancel);
+                                     QObject::tr("Suppression non effectuée\n", "Vérifiez l'Identifiant Ticket."), QMessageBox::Cancel);
         }
-    }
+    }*/
 
 }
 
@@ -214,6 +258,7 @@ void MainWindow::on_pushButton_Modifier_clicked()
             }
 
         }
+
     }
 
 
