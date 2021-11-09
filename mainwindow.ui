@@ -485,7 +485,7 @@ color: rgb(255, 255, 255);</string>
      <string>&lt; precedent</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QRadioButton" name="croissant">
     <property name="geometry">
      <rect>
       <x>1120</x>
@@ -502,7 +502,7 @@ font: 8pt &quot;Calibri&quot;;</string>
      <string>croissant</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_2">
+   <widget class="QRadioButton" name="decroissant">
     <property name="geometry">
      <rect>
       <x>1120</x>
@@ -519,7 +519,7 @@ font: 8pt &quot;Calibri&quot;;</string>
      <string>decroissant</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="tri">
     <property name="geometry">
      <rect>
       <x>1020</x>
@@ -531,11 +531,6 @@ font: 8pt &quot;Calibri&quot;;</string>
     <item>
      <property name="text">
       <string>nom</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>type</string>
      </property>
     </item>
     <item>

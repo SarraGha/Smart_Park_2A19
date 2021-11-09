@@ -57,6 +57,48 @@ model->setHeaderData(5,Qt::Horizontal,QObject::tr("IdF"));
 return model ;
 }
 
+QSqlQueryModel * produit::TriParNom (QString cls)
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QString request="select * from PRODUIT ORDER BY Nom "+cls;
+    model->setQuery(request);
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Libelle"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Prix"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Nbr_Exp"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("IdF"));
+    return model ;
+}
+
+QSqlQueryModel * produit::TriParPrix (QString cls)
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QString request="select * from PRODUIT ORDER BY PRIX "+cls;
+    model->setQuery(request);
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Libelle"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Prix"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Nbr_Exp"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("IdF"));
+    return model ;
+}
+
+QSqlQueryModel * produit::TriParNbr_E(QString cls)
+{
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QString request="select * from PRODUIT ORDER BY NBR_E "+cls;
+    model->setQuery(request);
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Libelle"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Prix"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Nbr_Exp"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("IdF"));
+    return model ;
+}
+
 
 bool produit::modifier(int id)
 {   QSqlQuery query;

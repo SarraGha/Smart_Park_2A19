@@ -10,12 +10,33 @@ MainWindow::MainWindow(QWidget *parent)
       ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableView->setModel((Ptmp.afficher()));
+    //ui->tableView->setModel((Ptmp.afficher()));
+    refresh();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::refresh()
+{
+    QString cls;
+    if (ui->croissant->isChecked()) cls="ASC";
+            else if  (ui->decroissant->isChecked()) cls="DESC";
+    switch (ui->tri->currentIndex()){
+    case 0:
+        ui->tableView->setModel((Ptmp.TriParNom(cls)));
+        break;
+    case 1:
+        ui->tableView->setModel((Ptmp.TriParPrix(cls)));
+        break;
+     case 2:
+        ui->tableView->setModel((Ptmp.TriParNbr_E(cls)));
+        break;
+
+    }
 }
 
 

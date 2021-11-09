@@ -19,6 +19,9 @@ public:
     bool modifier(int);
     QSqlQueryModel * afficher () ;
     void modifier();
+    QSqlQueryModel * TriParNom (QString) ;
+    QSqlQueryModel * TriParPrix (QString) ;
+    QSqlQueryModel * TriParNbr_E (QString) ;
 
 };
 
