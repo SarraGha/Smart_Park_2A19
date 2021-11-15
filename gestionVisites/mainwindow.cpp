@@ -6,6 +6,9 @@
 
 #include <QMessageBox>
 #include <QApplication>
+#include "exportexcel.h"
+#include <QDesktopServices>
+#include <QDebug>
 
 
 
@@ -369,3 +372,107 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::on_genererPDF_clicked()
+{
+
+
+    QString identifiantTicket = ui->lineEdit_IdentifiantTicket->text();
+    int prixTicket = ui->lineEdit_PrixTicket->text().toInt();
+    QString identifiantVisiteur = ui->lineEdit_IdentifiantVisiteur->text();
+    int nombreVisites = ui->spinBox_nbrVisites->text().toInt();
+    QString dateVisite = ui->dateEdit_dateVisite->date().toString();
+    QString abonnement = ui->comboBox_abonnement->currentText();
+
+
+
+    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement);
+
+    V.genererPDF(V);
+}
+
+
+void MainWindow::on_genererEXCEL_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Excel file"), qApp->applicationDirPath (),
+                                                        tr("Excel Files (*.xls)"));
+    qDebug()<<fileName;
+
+        if (fileName.isEmpty())
+            return;
+        ExportExcelObject obj(fileName, "mydata", ui->tableView_BD);
+        //colums to export
+        obj.addField(0, "IdentifiantTicket", "char(20)");
+        obj.addField(1, "PrixTicket", "char(20)");
+        obj.addField(2, "IdentifiantVisiteur", "char(20)");
+        obj.addField(3, "NombreVisites", "char(20)");
+        obj.addField(4, "DateVisite", "char(20)");
+        obj.addField(5, "Abonnement", "char(20)");
+        obj.addField(6, "ID_Animal", "char(20)");
+
+        int retVal = obj.export2Excel();
+        if( retVal > 0)
+        {
+            QMessageBox::information(this, tr("Done"),QString(tr("%1 records exported!")).arg(retVal));
+        }
+
+
+        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
+
+}
+
+void MainWindow::on_comboBox_Remise_currentIndexChanged(int index)
+{
+
+    QString critere;
+    int prixTicket = ui->lineEdit_PrixTicket->text().toInt();
+
+    if(index==4)
+    {
+        prixTicket=prixTicket*0.5;
+        QString prixTicketString = QString::number(prixTicket);
+        ui->lineEdit_PrixTicket->setText(prixTicketString);
+    }
+    if(index==3)
+    {
+        prixTicket=prixTicket*0.7;
+        QString prixTicketString = QString::number(prixTicket);
+        ui->lineEdit_PrixTicket->setText(prixTicketString);
+    }
+
+    if(index==2)
+    {
+        prixTicket=prixTicket*0.8;
+        QString prixTicketString = QString::number(prixTicket);
+        ui->lineEdit_PrixTicket->setText(prixTicketString);
+    }
+
+    if(index==1)
+    {
+        prixTicket=prixTicket*0.9;
+        QString prixTicketString = QString::number(prixTicket);
+        ui->lineEdit_PrixTicket->setText(prixTicketString);
+    }
+
+}
+
+void MainWindow::on_pushButton_acceder_clicked()
+{
+   /*
+    *  QString userName = ui->identifiantAccueil->text();
+    QString password = ui->motDePasseAccueil->text();
+    QSqlQuery query;
+
+    query.prepare("SELECT identifiant FROM Comptes where identifiant= :userName and mdp= :password");
+    query.bindValue(":userName", userName);
+    query.bindValue(":password", password);
+
+    bool test = query.exec();
+
+    if(test)
+        ui->tabWidget->setCurrentIndex(2);
+    */
+
+
+
+}

@@ -4,6 +4,13 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QtCore>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#include <QFileDialog>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QTextStream>
 
 
 /*
@@ -51,7 +58,8 @@ public:
     //Métiers
     QSqlQueryModel * rechercher(const QString &critere);
     QSqlQueryModel * trier(QString critere);
-    //void ouvrirPDF();
+    void genererPDF(Visite V);
+    int calculOffre(int prixTicket,int offre);
 
 
 };

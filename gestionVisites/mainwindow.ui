@@ -66,7 +66,7 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>940</x>
+        <x>930</x>
         <y>170</y>
         <width>201</width>
         <height>211</height>
@@ -109,8 +109,15 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">border: 1px solid black;
+border-radius: 5px;</string>
       </property>
      </widget>
      <widget class="QLabel" name="texteMotDePasseAccueil">
@@ -143,16 +150,23 @@
         <height>30</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Calibri Light</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">border: 1px solid black;
+border-radius: 5px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_acceder">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>970</x>
         <y>520</y>
-        <width>93</width>
+        <width>131</width>
         <height>28</height>
        </rect>
       </property>
@@ -161,28 +175,15 @@
         <family>Calibri Light</family>
         <pointsize>11</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+</string>
       </property>
       <property name="text">
        <string>Accéder</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_annuler">
-      <property name="geometry">
-       <rect>
-        <x>1050</x>
-        <y>520</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri Light</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Annuler</string>
       </property>
      </widget>
     </widget>
@@ -302,7 +303,7 @@
        <widget class="QLabel" name="texteIdentifiantTicket">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>50</x>
           <y>170</y>
           <width>121</width>
           <height>21</height>
@@ -324,7 +325,7 @@
        <widget class="QLineEdit" name="lineEdit_IdentifiantTicket">
         <property name="geometry">
          <rect>
-          <x>300</x>
+          <x>190</x>
           <y>170</y>
           <width>140</width>
           <height>30</height>
@@ -337,7 +338,8 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
         </property>
         <property name="inputMethodHints">
          <set>Qt::ImhNone</set>
@@ -346,8 +348,8 @@
        <widget class="QLabel" name="textePrixTicket">
         <property name="geometry">
          <rect>
-          <x>210</x>
-          <y>240</y>
+          <x>350</x>
+          <y>170</y>
           <width>81</width>
           <height>21</height>
          </rect>
@@ -368,8 +370,8 @@
        <widget class="QLineEdit" name="lineEdit_PrixTicket">
         <property name="geometry">
          <rect>
-          <x>300</x>
-          <y>240</y>
+          <x>440</x>
+          <y>170</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -381,7 +383,8 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
         </property>
         <property name="inputMethodHints">
          <set>Qt::ImhNone</set>
@@ -390,8 +393,8 @@
        <widget class="QLabel" name="texteIdnetifiantVisiteur">
         <property name="geometry">
          <rect>
-          <x>570</x>
-          <y>170</y>
+          <x>700</x>
+          <y>160</y>
           <width>141</width>
           <height>21</height>
          </rect>
@@ -412,8 +415,8 @@
        <widget class="QLineEdit" name="lineEdit_IdentifiantVisiteur">
         <property name="geometry">
          <rect>
-          <x>730</x>
-          <y>170</y>
+          <x>860</x>
+          <y>160</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -425,7 +428,8 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
         </property>
         <property name="inputMethodHints">
          <set>Qt::ImhNone</set>
@@ -434,8 +438,8 @@
        <widget class="QLabel" name="texteNbrVisites">
         <property name="geometry">
          <rect>
-          <x>910</x>
-          <y>170</y>
+          <x>1040</x>
+          <y>160</y>
           <width>131</width>
           <height>21</height>
          </rect>
@@ -456,8 +460,8 @@
        <widget class="QLabel" name="texteVisiteur">
         <property name="geometry">
          <rect>
-          <x>830</x>
-          <y>120</y>
+          <x>960</x>
+          <y>110</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -492,8 +496,8 @@
        <widget class="QSpinBox" name="spinBox_nbrVisites">
         <property name="geometry">
          <rect>
-          <x>1060</x>
-          <y>170</y>
+          <x>1190</x>
+          <y>160</y>
           <width>50</width>
           <height>30</height>
          </rect>
@@ -511,8 +515,8 @@
        <widget class="QDateEdit" name="dateEdit_dateVisite">
         <property name="geometry">
          <rect>
-          <x>730</x>
-          <y>240</y>
+          <x>860</x>
+          <y>210</y>
           <width>140</width>
           <height>30</height>
          </rect>
@@ -530,8 +534,8 @@
        <widget class="QLabel" name="texteDateVisite">
         <property name="geometry">
          <rect>
-          <x>580</x>
-          <y>240</y>
+          <x>710</x>
+          <y>210</y>
           <width>141</width>
           <height>21</height>
          </rect>
@@ -552,8 +556,8 @@
        <widget class="QComboBox" name="comboBox_abonnement">
         <property name="geometry">
          <rect>
-          <x>1040</x>
-          <y>240</y>
+          <x>1170</x>
+          <y>210</y>
           <width>73</width>
           <height>30</height>
          </rect>
@@ -581,8 +585,8 @@
        <widget class="QLabel" name="texteAbonnement">
         <property name="geometry">
          <rect>
-          <x>910</x>
-          <y>240</y>
+          <x>1040</x>
+          <y>210</y>
           <width>121</width>
           <height>21</height>
          </rect>
@@ -603,8 +607,8 @@
        <widget class="QTableView" name="tableView_BD">
         <property name="geometry">
          <rect>
-          <x>240</x>
-          <y>520</y>
+          <x>190</x>
+          <y>510</y>
           <width>821</width>
           <height>251</height>
          </rect>
@@ -616,8 +620,8 @@
        <widget class="QLineEdit" name="lineEdit_rechercher">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>480</y>
+          <x>240</x>
+          <y>470</y>
           <width>180</width>
           <height>30</height>
          </rect>
@@ -629,7 +633,8 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
         </property>
         <property name="inputMethodHints">
          <set>Qt::ImhNone</set>
@@ -641,8 +646,8 @@
        <widget class="QComboBox" name="comboBox_trier">
         <property name="geometry">
          <rect>
-          <x>900</x>
-          <y>480</y>
+          <x>850</x>
+          <y>470</y>
           <width>161</width>
           <height>30</height>
          </rect>
@@ -694,6 +699,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;
 </string>
         </property>
         <property name="text">
@@ -702,6 +708,15 @@
         <property name="icon">
          <iconset>
           <normaloff>../../../icone/1x/+.png</normaloff>../../../icone/1x/+.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_Modifier">
@@ -726,7 +741,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
-</string>
+border-radius: 3px;</string>
         </property>
         <property name="text">
          <string>Modifier</string>
@@ -735,12 +750,18 @@
          <iconset>
           <normaloff>../../../icone/1x/mise à jour.png</normaloff>../../../icone/1x/mise à jour.png</iconset>
         </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
        </widget>
        <widget class="QLabel" name="texteSupprimer">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>410</y>
+          <x>300</x>
+          <y>400</y>
           <width>431</width>
           <height>31</height>
          </rect>
@@ -761,8 +782,8 @@
        <widget class="QPushButton" name="pushButton_Supprimer">
         <property name="geometry">
          <rect>
-          <x>790</x>
-          <y>410</y>
+          <x>740</x>
+          <y>400</y>
           <width>120</width>
           <height>30</height>
          </rect>
@@ -780,6 +801,7 @@
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;
 </string>
         </property>
         <property name="text">
@@ -789,12 +811,18 @@
          <iconset>
           <normaloff>../../../icone/1x/-.png</normaloff>../../../icone/1x/-.png</iconset>
         </property>
+        <property name="iconSize">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
        </widget>
        <widget class="QLabel" name="label_2">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>480</y>
+          <x>200</x>
+          <y>470</y>
           <width>31</width>
           <height>31</height>
          </rect>
@@ -819,11 +847,11 @@
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QLabel" name="textePrixTicket_2">
+       <widget class="QLabel" name="texteTri">
         <property name="geometry">
          <rect>
-          <x>690</x>
-          <y>480</y>
+          <x>640</x>
+          <y>470</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -841,26 +869,424 @@
          <string>Trier selon le prix de ticket :</string>
         </property>
        </widget>
+       <widget class="QLineEdit" name="lineEdit_IdentifiantAnimal">
+        <property name="geometry">
+         <rect>
+          <x>1040</x>
+          <y>260</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteIdAnimal">
+        <property name="geometry">
+         <rect>
+          <x>840</x>
+          <y>270</y>
+          <width>191</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Identifiant Animal Adopté</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>1030</x>
+          <y>330</y>
+          <width>231</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="title">
+         <string>Imprimer Ticket</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <widget class="QPushButton" name="genererPDF">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>30</y>
+           <width>120</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Calibri Light</family>
+           <pointsize>11</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 3px;
+</string>
+         </property>
+         <property name="text">
+          <string>PDF</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../icone/1x/pdf.png</normaloff>../../../icone/1x/pdf.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="ExporterBD">
+        <property name="geometry">
+         <rect>
+          <x>1030</x>
+          <y>690</y>
+          <width>231</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="title">
+         <string>Exporter la BD</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <widget class="QPushButton" name="genererEXCEL">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>30</y>
+           <width>120</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Calibri Light</family>
+           <pointsize>11</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 3px;
+</string>
+         </property>
+         <property name="text">
+          <string>EXCEL</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../icone/1x/EXCEL.png</normaloff>../../../icone/1x/EXCEL.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Reclamation">
+        <property name="geometry">
+         <rect>
+          <x>1140</x>
+          <y>20</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border: 2px solid yellow;
+border-radius: 3px;
+</string>
+        </property>
+        <property name="text">
+         <string>Reclamation</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../../../icone/1x/exclamation.png</normaloff>../../../icone/1x/exclamation.png</iconset>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texteRemise">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>220</y>
+          <width>171</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Remise sur Prix  Ticket</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox_Remise">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>220</y>
+          <width>91</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>&lt;choisir&gt;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>20%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>30%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>50%</string>
+         </property>
+        </item>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_Statistiques">
        <attribute name="title">
         <string>Statistiques</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="tab_liste">
-       <attribute name="title">
-        <string>Liste des Animaux Adoptés</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_laUne">
-       <attribute name="title">
-        <string>à la Une</string>
-       </attribute>
-      </widget>
       <widget class="QWidget" name="tab_offres">
        <attribute name="title">
         <string>Calcul d'Offres</string>
        </attribute>
+       <widget class="QLineEdit" name="lineEdit_PrixTicket_Offre">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>120</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textePrixTicket_Offre">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>120</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Prix Ticket</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="textePrixTicketRemise_Offre">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>180</y>
+          <width>181</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Prix Ticket après remise</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_PrixTicketRemise_Offre">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>180</y>
+          <width>140</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;</string>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>120</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+         </font>
+        </property>
+        <item>
+         <property name="text">
+          <string>&lt;Choisir&gt;</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>20%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>30%</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>50%</string>
+         </property>
+        </item>
+       </widget>
       </widget>
      </widget>
     </widget>

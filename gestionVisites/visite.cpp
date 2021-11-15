@@ -1,5 +1,6 @@
 #include "visite.h"
-
+#include <QtPrintSupport/QPrinter>
+#include <QDesktopServices>
 
 Visite::Visite()
 {
@@ -117,12 +118,99 @@ QSqlQueryModel * Visite::trier(QString critere)
     return model;
 }
 
-/*
-void Visite::ouvrirPDF()
+
+void Visite::genererPDF(Visite V)
 {
-    ShellExecuteA(NULL,"open","doc.pdf",0,0,SW_NORMAL);
-}
+    /*
+    QString nomFichier = QFileDialog::getSaveFileName(0, QString::fromUtf8("Générer PDF"), QCoreApplication::applicationDirPath(), "*.pdf");
+
+        int id(20);
+        if (!nomFichier.isEmpty())
+        {
+            if (QFileInfo(nomFichier).suffix().isEmpty())
+                nomFichier.append(".pdf");
+
+            QPrinter printer(QPrinter::HighResolution);
+            printer.setOutputFormat(QPrinter::PdfFormat);
+            printer.setOutputFileName(nomFichier);
+            printer.setOrientation(QPrinter::Portrait);
+            printer.setPaperSize(QPrinter::A4);
+            printer.setPageSize(QPrinter::A4);
+            printer.setPageMargins(15,15,15,15,QPrinter::Millimeter);
+
+            qDebug() << "Page px :" << printer.pageRect() << printer.paperRect();
+            qDebug() << "Page mm :" << printer.pageRect(QPrinter::Millimeter) << printer.paperRect(QPrinter::Millimeter);
+            qreal left, top, right, bottom;
+            printer.getPageMargins(&left, &top, &right, &bottom, QPrinter::DevicePixel);
+            qDebug() << "Marges px :" << left << top << right << bottom;
+            printer.getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
+            qDebug() << "Marges mm :" << left << top << right << bottom;
+
+            QPainter painter(&printer);
+
+
+                painter.drawText(0, printer.pageRect().y()*2, QString::fromUtf8("TICKET"));
+                painter.drawText(1, printer.pageRect().y()*3, QString::fromUtf8("IDENTIFIANT TICKET:"));
+                painter.drawText(3, printer.pageRect().y()*4, QString::fromUtf8("PRIX TICKET:"));
+                painter.drawText(4, printer.pageRect().y()*5, QString::fromUtf8("IDENTIFIANT VISITEUR"));
+        }
 */
 
+
+    QString nomFichier = QFileDialog::getSaveFileName(0, QString::fromUtf8("Générer Ticket PDF"), QCoreApplication::applicationDirPath(), "*.pdf");
+    QPdfWriter writer(nomFichier);
+    writer.setPageSize(QPagedPaintDevice::A4);
+    writer.setPageMargins(QMargins(75, 75, 75, 75));
+    QPainter Painter(&writer);
+    QRect r = Painter.viewport();
+    //logo
+    Painter.drawPixmap(QRect(70,70,2000,708),QPixmap("C:/Users/MSI/Desktop/2021-2022/semestre 1/projet c++/1x/logo_fondBlanc_App.png"));
+
+    //date + adresse + email + telephone
+    Painter.setPen(Qt::black);
+    Painter.setFont(QFont("Calibri Light", 10));
+    QString date = "Tunis, ";
+    date += V.dateVisite;
+    date+= "\n\n Adresse : 18, rue de l'Usine \n ZI Aéroport Charguia II 2035 Ariana";
+    date+="\n\nTel : +216 53.100.100";
+    Painter.drawText(r, Qt::AlignRight, date);
+
+    //titre
+    Painter.setPen(Qt::black);
+    Painter.setFont(QFont("Calibri", 30, QFont::ExtraBold));
+    Painter.drawText(r, Qt::AlignHCenter,"\n\n\nTICKET");
+
+
+    //contenu ticket
+    Painter.setPen(Qt::black);
+    Painter.setFont(QFont("Calibri Light", 13, QFont::Bold));
+    Painter.drawText(0,3500, "Identifiant Ticket : ");
+    Painter.drawText(0,3800, "Prix Ticket : ");
+    Painter.drawText(0,4100, "Identifiant Visiteur : ");
+
+    Painter.setPen(Qt::black);
+    Painter.setFont(QFont("Calibri Light", 13));
+
+
+    QString prixTicket=QString::number(V.prixTicket);
+
+
+    Painter.drawText(1630,3500, V.identifiantTicket);
+    Painter.drawText(1050,3800, prixTicket);
+    Painter.drawText(1770,4100, V.identifiantVisiteur);
+
+    //affichage du pdf
+    QDesktopServices::openUrl(QUrl::fromLocalFile(nomFichier));
+
+
+    Painter.end();
+
+}
+
+
+int Visite::calculOffre(int prixTicket, int offre)
+{
+    return prixTicket*offre;
+}
 
 
