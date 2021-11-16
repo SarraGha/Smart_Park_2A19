@@ -14,6 +14,8 @@ class QCamera;
 class QCameraViewfinder;
 class QCameraImageCapture;
 class QVBoxLayout;
+class QMenu;
+class QAction;
 
 
 class MainWindow : public QMainWindow
@@ -53,5 +55,9 @@ private:
     QCameraViewfinder *CameraViewfinder;
     QCameraImageCapture *CameraImageCapture;
     QVBoxLayout *Layout;
+    QMenu *menuOptions;
+    QAction *demarrerCamera;
+    QAction *stopperCamera;
+    QAction *captureCamera;
 };
 #endif // MAINWINDOW_H

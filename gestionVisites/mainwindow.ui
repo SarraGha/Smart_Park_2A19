@@ -1152,6 +1152,53 @@ border-radius: 3px;
        <attribute name="title">
         <string>Camera</string>
        </attribute>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>90</y>
+          <width>980</width>
+          <height>541</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>978</width>
+           <height>539</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="optionsCamera">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>650</y>
+          <width>831</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri Light</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 3px;
+</string>
+        </property>
+        <property name="text">
+         <string>Options</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </widget>

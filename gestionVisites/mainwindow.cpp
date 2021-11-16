@@ -13,6 +13,9 @@
 #include <QCameraViewfinder>
 #include <QCameraImageCapture>
 #include <QVBoxLayout>
+#include <QMenu>
+#include <QAction>
+#include <QFileDialog>
 
 
 #include <QDebug>
@@ -45,9 +48,48 @@ MainWindow::MainWindow(QWidget *parent)
     CameraViewfinder = new QCameraViewfinder(this);
     CameraImageCapture = new QCameraImageCapture(Camera, this);
     Layout = new QVBoxLayout;
+    //Layout = new QVBoxLayout(CameraViewfinder);
 
-    //Layout->addItem(CameraViewfinder);
+    menuOptions = new QMenu("Options", this);
+    demarrerCamera = new QAction("Démarrer", this);
+    stopperCamera = new QAction("Pause", this);
+    captureCamera =new QAction("Capturer", this);
 
+    menuOptions->addActions({demarrerCamera, stopperCamera, captureCamera});
+    ui->optionsCamera->setMenu(menuOptions);
+
+    Camera->setViewfinder(CameraViewfinder);
+    Layout->addWidget(CameraViewfinder);
+    Layout->setMargin(0);
+    ui->scrollArea->setLayout(Layout);
+
+    //connection des options
+    connect(demarrerCamera, &QAction::triggered, [&](){
+        Camera->start();
+    });
+
+    connect(stopperCamera, &QAction::triggered, [&](){
+        Camera->stop();
+    });
+
+    connect(captureCamera, &QAction::triggered, [&](){
+         auto filename = QFileDialog::getSaveFileName(this, "Capturer", "/", "Imagen (*ipg; *jpeg)");
+         if(filename.isEmpty()){
+             return ;
+         }
+        CameraImageCapture->setCaptureDestination(
+                    QCameraImageCapture::CaptureToFile);
+        QImageEncoderSettings imageEncoderSettings;
+        imageEncoderSettings.setCodec("image/jpeg");
+        imageEncoderSettings.setResolution(1600, 1200);
+        CameraImageCapture->setEncodingSettings(imageEncoderSettings);
+        Camera->setCaptureMode(QCamera::CaptureStillImage);
+        Camera->start();
+        Camera->searchAndLock();
+
+        CameraImageCapture->capture(filename);
+        Camera->unlock();
+    });
 }
 
 
@@ -470,7 +512,7 @@ void MainWindow::on_genererEXCEL_clicked()
         }
 
 
-        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
+        //QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
 
 }
 

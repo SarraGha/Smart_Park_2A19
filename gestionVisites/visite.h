@@ -14,11 +14,7 @@
 #include <QTextStream>
 
 
-/*
-//bibliothèque PDF
-#include <shellapi.h>
-#include <windows.h>
-*/
+
 class Visite
 {
     QString identifiantTicket;
