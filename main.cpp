@@ -6,12 +6,13 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    connexion c;
+    connexion c;// instance de la classe connexion
 
-    // instanciation bd
-    bool test=c.createconnect();
-    MainWindow w;
-    if(test)
+
+    bool test=c.createconnect();//etablir la connexion
+    MainWindow w; // appel a la methode afficher
+
+    if(test)//Si la connexion est etablie
     {w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"

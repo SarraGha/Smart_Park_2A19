@@ -6,9 +6,11 @@
 
 class connexion
 {  
-    QSqlDatabase db;
+    QSqlDatabase db; //attribut de la classe connexion
+
 public:
     connexion();
+
     bool createconnect();
 };
 

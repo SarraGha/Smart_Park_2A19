@@ -21,14 +21,14 @@ background-color: rgb(17, 122, 101);</string>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>0</y>
+      <x>120</x>
+      <y>20</y>
       <width>1061</width>
-      <height>501</height>
+      <height>681</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_2">
@@ -36,7 +36,7 @@ background-color: rgb(17, 122, 101);</string>
        <rect>
         <x>320</x>
         <y>10</y>
-        <width>241</width>
+        <width>391</width>
         <height>51</height>
        </rect>
       </property>
@@ -251,6 +251,161 @@ text-decoration: underline;</string>
 </string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>440</y>
+        <width>271</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QPushButton" name="pushButton_Ajouter">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_modifier">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>20</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>modifier</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_supprimer">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>90</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>supprimer</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>530</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 11pt &quot;Calibri&quot;;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Recherche:</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="croissant">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>440</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 8pt &quot;Calibri&quot;;</string>
+      </property>
+      <property name="text">
+       <string>croissant</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>450</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 11pt &quot;Calibri&quot;;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>trier par:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_Tri">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>450</y>
+        <width>71</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>nom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>nombre d'exemplaires</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>prix </string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QRadioButton" name="decroissant">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>470</y>
+        <width>83</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 8pt &quot;Calibri&quot;;</string>
+      </property>
+      <property name="text">
+       <string>decroissant</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>530</y>
+        <width>211</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QLabel" name="label_11">
@@ -258,12 +413,22 @@ text-decoration: underline;</string>
        <rect>
         <x>270</x>
         <y>180</y>
-        <width>181</width>
+        <width>131</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
        <string>page stats</string>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>120</y>
+        <width>256</width>
+        <height>192</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -281,27 +446,27 @@ text-decoration: underline;</string>
        <string>Alertes</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_2">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>110</y>
-        <width>256</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>80</y>
-        <width>131</width>
+        <x>160</x>
+        <y>180</y>
+        <width>181</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Historique des alertes</string>
+       <string>Modifier seuil de l'alerte</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>160</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -345,7 +510,7 @@ text-decoration: underline;</string>
        <string>Objet:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
+     <widget class="QLineEdit" name="a_mail">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -355,7 +520,7 @@ text-decoration: underline;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
+     <widget class="QLineEdit" name="objet_mail">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -365,17 +530,17 @@ text-decoration: underline;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="message_mail">
       <property name="geometry">
        <rect>
         <x>120</x>
         <y>190</y>
         <width>271</width>
-        <height>191</height>
+        <height>291</height>
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="send">
       <property name="geometry">
        <rect>
         <x>430</x>
@@ -485,161 +650,6 @@ color: rgb(255, 255, 255);</string>
      <string>&lt; precedent</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="croissant">
-    <property name="geometry">
-     <rect>
-      <x>1120</x>
-      <y>550</y>
-      <width>83</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-font: 8pt &quot;Calibri&quot;;</string>
-    </property>
-    <property name="text">
-     <string>croissant</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="decroissant">
-    <property name="geometry">
-     <rect>
-      <x>1120</x>
-      <y>580</y>
-      <width>83</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-font: 8pt &quot;Calibri&quot;;</string>
-    </property>
-    <property name="text">
-     <string>decroissant</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="tri">
-    <property name="geometry">
-     <rect>
-      <x>1020</x>
-      <y>560</y>
-      <width>71</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>nom</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>prix </string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>nombre d'exemplaires</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>940</x>
-      <y>560</y>
-      <width>61</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Calibri&quot;;
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>trier par:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_4">
-    <property name="geometry">
-     <rect>
-      <x>1020</x>
-      <y>640</y>
-      <width>211</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>930</x>
-      <y>640</y>
-      <width>71</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Calibri&quot;;
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Recherche:</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>540</y>
-      <width>271</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QPushButton" name="pushButton_Ajouter">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Ajouter</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_modifier">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>20</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>modifier</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_supprimer">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>90</y>
-       <width>91</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>supprimer</string>
-     </property>
-    </widget>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -647,7 +657,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1300</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
