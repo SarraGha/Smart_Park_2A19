@@ -8,13 +8,17 @@
 #include <QApplication>
 #include "exportexcel.h"
 #include <QDesktopServices>
-#include <QDebug>
 
+#include <QCamera>
+#include <QCameraViewfinder>
+#include <QCameraImageCapture>
+#include <QVBoxLayout>
 
 
 #include <QDebug>
 #include <iostream>
 using namespace std;
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -23,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView_BD->setModel(Vte.afficher());
     setWindowTitle("Smart Zoo");
+    setWindowIcon(QIcon("C:/Users/MSI/Desktop/2021-2022/semestre 1/projet c++/travail perso/icone/1x/logo_App_1.png"));
+
 
 
     ui->dateEdit_dateVisite->setDate(QDate::currentDate());
@@ -31,6 +37,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_IdentifiantTicket->setMaxLength(8);
     ui->lineEdit_IdentifiantVisiteur->setMaxLength(8);
     ui->lineEdit_rechercher->setMaxLength(8);
+
+
+    //camera
+    Camera=new QCamera(this);
+    CameraViewfinder = new QCameraViewfinder(this);
+    CameraImageCapture = new QCameraImageCapture(Camera, this);
+    Layout = new QVBoxLayout;
+
+    //Layout->addItem(CameraViewfinder);
 
 }
 
@@ -44,6 +59,7 @@ void MainWindow::on_pushButton_Ajouter_clicked()
     int nombreVisites = ui->spinBox_nbrVisites->text().toInt();
     QString dateVisite = ui->dateEdit_dateVisite->date().toString();
     QString abonnement = ui->comboBox_abonnement->currentText();
+    QString idAnimal = ui->lineEdit_IdentifiantAnimal->text();
 
 
 
@@ -54,11 +70,13 @@ void MainWindow::on_pushButton_Ajouter_clicked()
     qDebug()<<nombreVisites;
     qDebug()<<dateVisite;
     qDebug()<<abonnement;
+    qDebug()<<idAnimal;
 
 
 
     bool test_idTicket=true;
     bool test_idVisiteur=true;
+    bool test_idAnimal=true;
 
     if(identifiantTicket.isEmpty())
     {
@@ -102,7 +120,22 @@ void MainWindow::on_pushButton_Ajouter_clicked()
     }
 
 
-    if(test_idTicket == false || prixTicket == 0 || test_idVisiteur == false)
+
+        for(int i =0 ; i < idAnimal.size(); i++)
+        {
+            if(idAnimal[i] != '0' && idAnimal[i] != '1' && idAnimal[i] != '2' && idAnimal[i] != '3'
+                    && idAnimal[i] != '4' && idAnimal[i] != '5' && idAnimal[i] != '6' && idAnimal[i] != '7'
+                    && idAnimal[i] != '8' && idAnimal[i] != '9')
+            {
+                test_idAnimal=false;
+                qDebug()<<idAnimal[i];
+                qDebug()<<test_idAnimal;
+            }
+
+        }
+
+
+    if(test_idTicket == false || prixTicket == 0 || test_idVisiteur == false || test_idAnimal == false)
     {
         QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                                  QObject::tr("Ajout non permis.\n""Vérifiez les données."), QMessageBox::Cancel);
@@ -118,12 +151,15 @@ void MainWindow::on_pushButton_Ajouter_clicked()
         if(prixTicket == 0)
             QMessageBox::critical(nullptr, QObject::tr("Erreur prix_ticket"),
                                      QObject::tr("Entez un prix ticket."), QMessageBox::Cancel);
+        if(test_idAnimal == false)
+            QMessageBox::critical(nullptr, QObject::tr("Erreur id_animal"),
+                                     QObject::tr("Identifiant Animal ne doit contenir que des CHIFFRES."), QMessageBox::Cancel);
 
     }
 
     else
     {
-        Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement);
+        Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement, idAnimal);
 
         bool test = V.ajouter();
 
@@ -248,10 +284,11 @@ void MainWindow::on_pushButton_Modifier_clicked()
     int nombreVisites = ui->spinBox_nbrVisites->text().toInt();
     QString dateVisite = ui->dateEdit_dateVisite->date().toString();
     QString abonnement = ui->comboBox_abonnement->currentText();
-
+    QString idAnimal = ui->lineEdit_IdentifiantAnimal->text();
 
     bool test_idTicket=true;
     bool test_idVisiteur=true;
+    bool test_idAnimal=true;
 
     if(identifiantTicket.isEmpty())
     {
@@ -296,7 +333,21 @@ void MainWindow::on_pushButton_Modifier_clicked()
     }
 
 
-    if(test_idTicket == false || prixTicket == 0 || test_idVisiteur == false)
+    for(int i =0 ; i < idAnimal.size(); i++)
+    {
+        if(idAnimal[i] != '0' && idAnimal[i] != '1' && idAnimal[i] != '2' && idAnimal[i] != '3'
+                && idAnimal[i] != '4' && idAnimal[i] != '5' && idAnimal[i] != '6' && idAnimal[i] != '7'
+                && idAnimal[i] != '8' && idAnimal[i] != '9')
+        {
+            test_idAnimal=false;
+            qDebug()<<idAnimal[i];
+            qDebug()<<test_idAnimal;
+        }
+
+    }
+
+
+    if(test_idTicket == false || prixTicket == 0 || test_idVisiteur == false || test_idAnimal == false)
     {
         QMessageBox::critical(nullptr, QObject::tr("Not OK"),
                                  QObject::tr("Modification non permise.\n""Vérifiez les données."), QMessageBox::Cancel);
@@ -317,7 +368,7 @@ void MainWindow::on_pushButton_Modifier_clicked()
 
     else
     {
-        Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement);
+        Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement, idAnimal);
 
         bool test= V.modifier(identifiantTicket);
 
@@ -383,10 +434,11 @@ void MainWindow::on_genererPDF_clicked()
     int nombreVisites = ui->spinBox_nbrVisites->text().toInt();
     QString dateVisite = ui->dateEdit_dateVisite->date().toString();
     QString abonnement = ui->comboBox_abonnement->currentText();
+    QString idAnimal = ui->lineEdit_IdentifiantAnimal->text();
 
 
 
-    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement);
+    Visite V(identifiantTicket, prixTicket, identifiantVisiteur, nombreVisites, dateVisite, abonnement, idAnimal);
 
     V.genererPDF(V);
 }
@@ -456,9 +508,10 @@ void MainWindow::on_comboBox_Remise_currentIndexChanged(int index)
 
 }
 
+/*
 void MainWindow::on_pushButton_acceder_clicked()
 {
-   /*
+
     *  QString userName = ui->identifiantAccueil->text();
     QString password = ui->motDePasseAccueil->text();
     QSqlQuery query;
@@ -471,8 +524,8 @@ void MainWindow::on_pushButton_acceder_clicked()
 
     if(test)
         ui->tabWidget->setCurrentIndex(2);
-    */
 
 
 
-}
+
+}*/

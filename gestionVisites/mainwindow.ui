@@ -1038,8 +1038,8 @@ border-radius: 3px;
          </property>
          <property name="iconSize">
           <size>
-           <width>20</width>
-           <height>20</height>
+           <width>22</width>
+           <height>22</height>
           </size>
          </property>
         </widget>
@@ -1148,145 +1148,10 @@ border-radius: 3px;
         </item>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_Statistiques">
+      <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>Statistiques</string>
+        <string>Camera</string>
        </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_offres">
-       <attribute name="title">
-        <string>Calcul d'Offres</string>
-       </attribute>
-       <widget class="QLineEdit" name="lineEdit_PrixTicket_Offre">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>120</y>
-          <width>140</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 3px;</string>
-        </property>
-        <property name="inputMethodHints">
-         <set>Qt::ImhNone</set>
-        </property>
-       </widget>
-       <widget class="QLabel" name="textePrixTicket_Offre">
-        <property name="geometry">
-         <rect>
-          <x>170</x>
-          <y>120</y>
-          <width>81</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Prix Ticket</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="textePrixTicketRemise_Offre">
-        <property name="geometry">
-         <rect>
-          <x>170</x>
-          <y>180</y>
-          <width>181</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>Prix Ticket après remise</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_PrixTicketRemise_Offre">
-        <property name="geometry">
-         <rect>
-          <x>360</x>
-          <y>180</y>
-          <width>140</width>
-          <height>30</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 3px;</string>
-        </property>
-        <property name="inputMethodHints">
-         <set>Qt::ImhNone</set>
-        </property>
-       </widget>
-       <widget class="QComboBox" name="comboBox">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>120</y>
-          <width>91</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Calibri Light</family>
-         </font>
-        </property>
-        <item>
-         <property name="text">
-          <string>&lt;Choisir&gt;</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>10%</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>20%</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>30%</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>50%</string>
-         </property>
-        </item>
-       </widget>
       </widget>
      </widget>
     </widget>
@@ -1301,6 +1166,12 @@ border-radius: 3px;</string>
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuSmart_Zoo">
+    <property name="title">
+     <string>Smart Zoo</string>
+    </property>
+   </widget>
+   <addaction name="menuSmart_Zoo"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

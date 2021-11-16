@@ -26,11 +26,12 @@ class Visite
     int nombreVisites;
     QString dateVisite;
     QString abonnement;
+    QString idAnimal;
 
 public:
     //Constructeurs
     Visite();
-    Visite(QString, int, QString, int, QString, QString);
+    Visite(QString, int, QString, int, QString, QString, QString);
 
     //Getters
     QString get_identifiantTicket(){return identifiantTicket;};

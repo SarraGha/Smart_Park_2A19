@@ -10,7 +10,7 @@ QT_END_NAMESPACE
 
 //camera
 class QCamera;
-class QCameraViewFinder;
+class QCameraViewfinder;
 class QCameraImageCapture;
 class QVBoxLayout;
 
@@ -40,7 +40,7 @@ private slots:
 
     void on_comboBox_Remise_currentIndexChanged(int index);
 
-    void on_pushButton_acceder_clicked();
+    //void on_pushButton_acceder_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -48,9 +48,9 @@ private:
     Visite Vte;
 
     //camera
-    QCamera *mCamera;
-    QCameraViewFinder *mCameraViewFinder;
-    QCameraImageCapture *mCameraImageCapture;
-    QVBoxLayout *mLayout;
+    QCamera *Camera;
+    QCameraViewfinder *CameraViewfinder;
+    QCameraImageCapture *CameraImageCapture;
+    QVBoxLayout *Layout;
 };
 #endif // MAINWINDOW_H

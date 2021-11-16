@@ -10,9 +10,10 @@ Visite::Visite()
     nombreVisites=0;
     dateVisite="";
     abonnement="";
+    idAnimal="";
 }
 
-Visite::Visite(QString identifiantTicket, int prixTicket, QString identifiantVisiteur, int nombreVisites, QString dateVisite, QString abonnement)
+Visite::Visite(QString identifiantTicket, int prixTicket, QString identifiantVisiteur, int nombreVisites, QString dateVisite, QString abonnement, QString idAnimal)
 {
     this->identifiantTicket=identifiantTicket;
     this->prixTicket=prixTicket;
@@ -20,14 +21,15 @@ Visite::Visite(QString identifiantTicket, int prixTicket, QString identifiantVis
     this->nombreVisites=nombreVisites;
     this->dateVisite=dateVisite;
     this->abonnement=abonnement;
+    this->idAnimal=idAnimal;
 }
 
 bool Visite::ajouter()
 {
     QSqlQuery query;
 
-    query.prepare("INSERT INTO VISITES(IDENTIFIANTTICKET, PRIXTICKET, IDENTIFIANTVISITEUR, NOMBREVISITES, DATEVISITE, ABONNEMENT)"
-                  "VALUES(:identifiantTicket, :prixTicket, :identifiantVisiteur, :nombreVisites, :dateVisite, :abonnement)");
+    query.prepare("INSERT INTO VISITES(IDENTIFIANTTICKET, PRIXTICKET, IDENTIFIANTVISITEUR, NOMBREVISITES, DATEVISITE, ABONNEMENT, ID_ANIMAL_FK1)"
+                  "VALUES(:identifiantTicket, :prixTicket, :identifiantVisiteur, :nombreVisites, :dateVisite, :abonnement, :IdAnimal)");
 
     query.bindValue(":identifiantTicket", identifiantTicket);
     query.bindValue(":prixTicket", prixTicket);
@@ -35,6 +37,7 @@ bool Visite::ajouter()
     query.bindValue(":nombreVisites", nombreVisites);
     query.bindValue(":dateVisite", dateVisite);
     query.bindValue(":abonnement", abonnement);
+    query.bindValue(":IdAnimal", idAnimal);
 
     return query.exec();
 }
@@ -62,6 +65,7 @@ bool Visite::modifier(QString identifiantTicket)
     query.bindValue(":nombreVisites", nombreVisites);
     query.bindValue(":dateVisite", dateVisite);
     query.bindValue(":abonnement", abonnement);
+
 
     return query.exec();
 
