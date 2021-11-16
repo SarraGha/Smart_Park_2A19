@@ -6,7 +6,6 @@
 #include <QSqlDatabase>
 
 
-
 class Connexion
 {
     QSqlDatabase db;

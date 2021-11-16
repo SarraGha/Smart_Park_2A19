@@ -1,6 +1,7 @@
 #ifndef VISITE_H
 #define VISITE_H
 
+
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>

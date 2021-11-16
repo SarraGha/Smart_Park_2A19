@@ -1,5 +1,6 @@
 #include "connexion.h"
 
+
 bool Connexion::createConnection()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");

@@ -2,6 +2,7 @@
 #include <QtPrintSupport/QPrinter>
 #include <QDesktopServices>
 
+
 Visite::Visite()
 {
     identifiantTicket="";

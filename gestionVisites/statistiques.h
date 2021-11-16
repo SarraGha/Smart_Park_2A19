@@ -1,6 +1,7 @@
 #ifndef STATISTIQUES_H
 #define STATISTIQUES_H
 /*
+ *
 #include <QDialog>
 #include <QDialog>
 #include <QApplication>
