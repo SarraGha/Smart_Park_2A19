@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <visite.h>
+#include "arduino.h"
+#include <QMessageBox>
 
 
 QT_BEGIN_NAMESPACE
@@ -27,6 +29,8 @@ public:
     ~MainWindow();
 
 private slots:
+    void update();
+
     void on_pushButton_Ajouter_clicked();
 
     void on_pushButton_Supprimer_clicked();
@@ -59,5 +63,10 @@ private:
     QAction *demarrerCamera;
     QAction *stopperCamera;
     QAction *captureCamera;
+
+    //Arduino
+    QByteArray data; //variable content les données reçues
+    Arduino A;
+
 };
 #endif // MAINWINDOW_H

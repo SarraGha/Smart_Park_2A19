@@ -3,11 +3,13 @@
 
 #include "connexion.h"
 #include "visite.h"
+#include "arduino.h"
 
 #include <QMessageBox>
 #include <QApplication>
 #include "exportexcel.h"
 #include <QDesktopServices>
+#include <QDebug>
 
 #include <QCamera>
 #include <QCameraViewfinder>
@@ -41,7 +43,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_IdentifiantTicket->setMaxLength(8);
     ui->lineEdit_IdentifiantVisiteur->setMaxLength(8);
     ui->lineEdit_rechercher->setMaxLength(8);
-
 
     //camera
     Camera=new QCamera(this);
@@ -90,6 +91,65 @@ MainWindow::MainWindow(QWidget *parent)
         CameraImageCapture->capture(filename);
         Camera->unlock();
     });
+
+
+
+    //Arduino
+    int ret=A.connect_arduino();
+    switch (ret) {
+    case(0):qDebug()<<"arduino is available and connected to :"<<A.getarduino_port_name();
+        break;
+    case(1):qDebug()<<"arduino is available but not connected to :"<<A.getarduino_port_name();
+        break;
+    case(-1):qDebug()<<"arduino is not available ";
+        break;
+    }
+
+    QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update()));
+    qDebug()<<"données reçus d'arduino"<<A.read_from_arduino();
+
+
+}
+
+void MainWindow::update()
+{
+    data=A.read_from_arduino();
+    qDebug()<<"données reçus d'arduino"<<data;
+
+    if(data=="1")
+    {
+        QMessageBox msgBoxArduino;
+        msgBoxArduino.setText("Attention!La porte d'une cage est ouver-te!");
+        msgBoxArduino.setInformativeText("Voulez-vous la fermer?");
+        QPushButton *bouttonOui =msgBoxArduino.addButton(tr("Fermer"), QMessageBox::AcceptRole);
+        QPushButton *bouttonNon =msgBoxArduino.addButton(tr("Non"), QMessageBox::RejectRole);
+        msgBoxArduino.addButton(bouttonOui, QMessageBox::AcceptRole);
+        msgBoxArduino.addButton(bouttonNon, QMessageBox::RejectRole);
+        msgBoxArduino.setIcon(QMessageBox::Warning);
+
+        msgBoxArduino.exec();
+
+        if(msgBoxArduino.clickedButton()==bouttonOui){
+            A.write_to_arduino("1");
+            QMessageBox::information(this, QObject::tr("Appuyer sur cancel pour quitter."),
+                                     QObject::tr("Porte fermée Avec Succès!"), QMessageBox::Cancel);
+        }
+        else if(msgBoxArduino.clickedButton()==bouttonNon){
+            QMessageBox::warning(this, QObject::tr("Appuyer sur cancel pour quitter."),
+                                     QObject::tr("Porte ouverte!"), QMessageBox::Cancel);
+        }
+
+
+        int ret=msgBoxArduino.exec();
+        switch (ret) {
+        case QMessageBox::Yes:
+            A.write_to_arduino("1");
+            break;
+        case QMessageBox::No:
+            A.write_to_arduino("0");
+            break;
+        }
+    }
 }
 
 
