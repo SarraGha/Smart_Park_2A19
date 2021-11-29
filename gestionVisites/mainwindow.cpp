@@ -104,22 +104,23 @@ MainWindow::MainWindow(QWidget *parent)
     case(-1):qDebug()<<"arduino is not available ";
         break;
     }
+        QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update()));
+        qDebug()<<"données reçus d'arduino"<<A.read_from_arduino();
 
-    QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update()));
-    qDebug()<<"données reçus d'arduino"<<A.read_from_arduino();
 
 
 }
 
 void MainWindow::update()
 {
-    data=A.read_from_arduino();
-    qDebug()<<"données reçus d'arduino"<<data;
+
+        data=A.read_from_arduino();
+        qDebug()<<"données reçus d'arduino"<<data;
 
     if(data=="1")
     {
         QMessageBox msgBoxArduino;
-        msgBoxArduino.setText("Attention!La porte d'une cage est ouver-te!");
+        msgBoxArduino.setText("Attention!La porte d'une cage est ouverte!");
         msgBoxArduino.setInformativeText("Voulez-vous la fermer?");
         QPushButton *bouttonOui =msgBoxArduino.addButton(tr("Fermer"), QMessageBox::AcceptRole);
         QPushButton *bouttonNon =msgBoxArduino.addButton(tr("Non"), QMessageBox::RejectRole);
@@ -140,7 +141,7 @@ void MainWindow::update()
         }
 
 
-        int ret=msgBoxArduino.exec();
+        /*int ret=msgBoxArduino.exec();
         switch (ret) {
         case QMessageBox::Yes:
             A.write_to_arduino("1");
@@ -148,7 +149,7 @@ void MainWindow::update()
         case QMessageBox::No:
             A.write_to_arduino("0");
             break;
-        }
+        }*/
     }
 }
 

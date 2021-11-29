@@ -38,7 +38,7 @@ void loop() {
       digitalWrite(PIN_LED_ROUGE, LOW);
       
     }  
-    exit(0);
+    /*exit(0);*/
   }
   
 }
