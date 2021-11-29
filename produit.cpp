@@ -149,15 +149,15 @@ void produit::alerte(QString nom_produit)
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
 
     notifyIcon->show();
-    notifyIcon->showMessage("Alerte produit grib yakml ","nbr dexmp mtaa lproduit "+nom_produit+" a9al ml seuil",QSystemTrayIcon::Information,15000);
+    notifyIcon->showMessage("Defaut produits ","nbr dexmp du produit "+nom_produit+" inferieur au seuil",QSystemTrayIcon::Information,15000);
 }
 
 
 QSqlQueryModel * produit::GetProduits_inf_a_seuil(int seuil)
 {
 QSqlQueryModel *model=new QSqlQueryModel();
-QString res=QString::number(seuil);
-model->setQuery("select * from GS_PRODUITS where NBR_EXEMPLAIRE <"+res);
+QString Seuil=QString::number(seuil);
+model->setQuery("select * from GS_PRODUITS where NBR_EXEMPLAIRE <"+Seuil);
 return model ;
 }
 
@@ -167,7 +167,7 @@ void produit::alerts()
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
 
     notifyIcon->show();
-    notifyIcon->showMessage("Alerte barcha produiyet ","barcha produiyet nbr ex mtaahom akal m seuil",QSystemTrayIcon::Information,15000);
+    notifyIcon->showMessage("Alerte de nombreux produits  ","de Nombreux Seuils des  produits sont inferieurs au seuil declaré  ",QSystemTrayIcon::Information,15000);
 }
 
 

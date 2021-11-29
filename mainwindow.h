@@ -3,6 +3,8 @@
 #include <QMainWindow>
 #include "produit.h"
 #include "smtp.h"
+#include "arduino.h"
+#include"QString"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -16,7 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-
+    void update();
     void on_pushButton_supprimer_clicked();
 
     void on_pushButton_modifier_clicked();
@@ -43,6 +45,10 @@ private slots:
 
     void on_pushButton_mail_clicked();
 
+  //  void on_pushButton_clicked(bool checked);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     produit Etmp;//ajout un attribut a la classe mainwindow
@@ -52,5 +58,7 @@ private:
     Smtp* smtp;
     QString msg;
     QString mail;
+  Arduino A;//instancier un objet pour utiliser les methodes d'Arduino
+    QByteArray data;//valeur retournée de ReadFrom Arduino
 };
 #endif // MAINWINDOW_H
