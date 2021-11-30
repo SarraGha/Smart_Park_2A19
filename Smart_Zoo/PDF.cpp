@@ -30,23 +30,35 @@ void pdf(QString filename)
     sender += "123-1232 City\n";
 
     Painter.drawText(r, Qt::AlignLeft, sender);
-
-
-
+    Painter.setFont(QFont("Calibri", 18, QFont::ExtraBold));
+    Painter.drawText(3250,1200,"Liste des Animaux");
     QSqlQueryModel* model= new QSqlQueryModel();
     model->setQuery("SELECT ID_ANIMAL, TYPE, NUMERO_CAGE, NOURITURE, AGE, RECLAMATION FROM Animaux");
-    QTableView tab;
-    tab.setModel(model);
-    Painter.scale(20,20);
+    Painter.setFont(QFont("Calibri", 12, QFont::Bold));
+    QTableWidget tab;
+    int i;
+    int y = 2000;
+    QString output;
+    QSqlRecord row;
+    for(i = 0, row= model->record(i); row.isNull(0) == 0; i++, row = model->record(i))
+    {
+        output = ("ID Animal : "+ QString::number(row.value(0).toInt())+ "/ Type Animal :"+ row.value(1).toString() +"/ Numero de cage :"+QString::number(row.value(2).toInt())+"/ Nouriture : "+row.value(3).toString()+"/ Age : "+QString::number(row.value(4).toInt())+" Ans");
+        Painter.drawText(0,y, output);
+        y += 500;
+    }
 
-    tab.render(&Painter);
+
+
+
+
 
     Painter.end();
 }
 
 QString info(QString rech)
 {
-    QFile animInfo("E:\\Downloads\\ProjetC++\\Project\\Info.txt");
+    //QFile animInfo("C:/Users/omare/Downloads/ProjetC++/Project/Info.txt");
+    QFile animInfo("E:/Downloads/ProjetC++/Project/Info.txt");
     animInfo.open(QIODevice::ReadOnly | QIODevice::Text);
     if(animInfo.isOpen())
     {

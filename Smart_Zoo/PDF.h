@@ -8,6 +8,10 @@
 #include <QSqlQuery>
 #include <QTableView>
 #include <QFont>
+#include <QtPrintSupport/QPrinter>
+#include <QTableWidget>
+#include <QSqlRecord>
+
 
 QString currDate();
 void pdf(QString);

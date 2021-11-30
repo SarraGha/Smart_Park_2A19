@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include <QMessageBox>
 #include <QApplication>
 #include "connection.h"
 

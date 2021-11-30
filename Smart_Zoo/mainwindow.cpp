@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "animaux.h"
 #include "PDF.h"
+#include "Carte_RFID.h"
+#include<QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,7 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tab_animaux_2->setModel(m);
     ui->tab_animaux_2->setSortingEnabled(true);
 
-    QImage image("E:\\Downloads\\ProjetC++\\Project\\Plan.jpg");
+    //QImage image("C:/Users/omare/Downloads/ProjetC++/Project/Plan.jpg");
+    QImage image("E:/Downloads/ProjetC++/Project/Plan.jpg");
     image.scaled(1241, 731, Qt::IgnoreAspectRatio);
     item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
     scene = new QGraphicsScene(this);
@@ -31,11 +34,50 @@ MainWindow::MainWindow(QWidget *parent)
     ui->Tab_repas->setModel(A.Afficher_repas());
     ui->Tab_repas->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
+    arduino = new QSerialPort;
+    arduino_available = false;
+    arduino_port_name = "";
+    foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
+    {
+        if(serialPortInfo.hasVendorIdentifier() && serialPortInfo.hasProductIdentifier())
+        {
+            if(serialPortInfo.vendorIdentifier()== arduino_uno_vendor_ID)
+            {
+                if(serialPortInfo.productIdentifier()== arduino_uno_product_ID)
+                {
+                    arduino_port_name = serialPortInfo.portName();
+                    arduino_available = true;
+                }
+            }
+        }
+    }
+    if(arduino_available)
+    {
+        qDebug() << "Found the arduino port...\n";
+        arduino->setPortName(arduino_port_name);
+        if(!arduino->open(QSerialPort::ReadWrite))
+        {
+            qDebug()<<"can't open";
+
+        }
+        arduino->setBaudRate(QSerialPort::Baud9600);
+        arduino->setDataBits(QSerialPort::Data8);
+        arduino->setFlowControl(QSerialPort::NoFlowControl);
+        arduino->setParity(QSerialPort::NoParity);
+        arduino->setStopBits(QSerialPort::OneStop);
+        QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
+
+    }
+    else{QMessageBox::warning(this, "Port Error", "Couldn't find Arduino!");}
 
 }
 
 MainWindow::~MainWindow()
 {
+    if(arduino->isOpen())
+    {
+        arduino->close();
+    }
     delete ui;
 }
 
@@ -165,7 +207,8 @@ void MainWindow::on_SuppRepas_clicked()
 
 void MainWindow::on_Genpdf_clicked()
 {
-    pdf("E:\\Downloads\\ProjetC++\\animaux.pdf");
+    //pdf("C:/Users/omare/Downloads/ProjetC++/animaux.pdf");
+    pdf("E:/Downloads/ProjetC++/Project/animaux.pdf");
 }
 
 void MainWindow::on_lineEdit_2_textChanged(const QString &arg1)
@@ -199,7 +242,8 @@ void MainWindow::on_RechCage_clicked()
     qDebug() << rech;
     if(rech == NULL)
     {
-        QImage image("E:\\Downloads\\ProjetC++\\Project\\Plan.jpg");
+        //QImage image("C:/Users/omare/Downloads/ProjetC++/Project/Plan.jpg");
+        QImage image("E:/Downloads/ProjetC++/Project/Plan.jpg");
         //image.scaled(1241, 731, Qt::IgnoreAspectRatio);
         item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
         scene = new QGraphicsScene(this);
@@ -207,6 +251,7 @@ void MainWindow::on_RechCage_clicked()
         scene->addItem(item);
     }
     else{
+        //QString path = ("C:/Users/omare/Downloads/ProjetC++/Project/"+QString::number(rech)+".jpg");
         QString path = ("E:/Downloads/ProjetC++/Project/"+QString::number(rech)+".jpg");
         path = path.simplified();
         path.replace(" ","");
@@ -218,4 +263,29 @@ void MainWindow::on_RechCage_clicked()
         ui->Map->setScene(scene);
         scene->addItem(item);
     }
+}
+
+void MainWindow::readSerial()
+{
+    QStringList buffer_split = serialBuffer.split(",");
+    if(buffer_split.length()< 2)
+    {
+        serialData = arduino->readAll();
+        serialBuffer = serialBuffer + QString::fromStdString(serialData.toStdString());
+        qDebug()<< serialBuffer;
+        serialData.clear();
+    }
+    buffer_split = serialBuffer.split(",");
+    if(serialBuffer.lastIndexOf(QChar(',')) != -1)
+    {
+        qDebug()<< buffer_split<<"\n";
+        parsed_data = buffer_split[0];
+        UID = parsed_data;
+        qDebug()<< "UID :"<< UID<< "\n";
+        parsed_data = UID;
+        serialBuffer ="";
+        checkCard(UID, arduino);
+
+    }
+
 }

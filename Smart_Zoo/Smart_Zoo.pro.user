@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.0, 2021-11-16T12:05:31. -->
+<!-- Written by QtCreator 4.11.0, 2021-11-30T12:35:03. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -287,6 +287,7 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Smart_Zoo2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:E:/Downloads/ProjetC++/Smart_Zoo/Smart_Zoo.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/Downloads/ProjetC++/Smart_Zoo/Smart_Zoo.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>

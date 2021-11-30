@@ -10,6 +10,10 @@
 #include <QGraphicsScene>
 #include <QtGui>
 #include "animaux.h"
+#include<QtSerialPort>
+#include<QSerialPortInfo>
+#include <QMessageBox>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -45,12 +49,23 @@ private slots:
 
     void on_RechCage_clicked();
 
+    void readSerial();
+
 private:
     Ui::MainWindow *ui;
     QStandardItemModel * model;
     Animaux A;
     QGraphicsItem *item;
     QGraphicsScene *scene;
+    QSerialPort *arduino;
+    static const quint16 arduino_uno_vendor_ID = 9025;
+    static const quint16 arduino_uno_product_ID = 67;
 
+    QString arduino_port_name;
+    bool arduino_available;
+    QByteArray serialData;
+    QString serialBuffer;
+    QString parsed_data;
+    QString UID;
 };
 #endif // MAINWINDOW_H
