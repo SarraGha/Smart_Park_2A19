@@ -10,6 +10,7 @@
 #include "exportexcel.h"
 #include <QDesktopServices>
 #include <QDebug>
+#include<windows.h>
 
 #include <QCamera>
 #include <QCameraViewfinder>
@@ -18,6 +19,8 @@
 #include <QMenu>
 #include <QAction>
 #include <QFileDialog>
+#include <chrono>
+#include <thread>
 
 
 #include <QDebug>
@@ -109,6 +112,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+
 }
 
 void MainWindow::update()
@@ -128,7 +132,9 @@ void MainWindow::update()
         msgBoxArduino.addButton(bouttonNon, QMessageBox::RejectRole);
         msgBoxArduino.setIcon(QMessageBox::Warning);
 
+
         msgBoxArduino.exec();
+        Sleep(100);
 
         if(msgBoxArduino.clickedButton()==bouttonOui){
             A.write_to_arduino("1");
