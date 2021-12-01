@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ressources/-.png</file>
+        <file>ressources/+.png</file>
+        <file>ressources/EXCEL.png</file>
+        <file>ressources/logo_App.png</file>
+        <file>ressources/mise à jour.png</file>
+        <file>ressources/pdf.png</file>
+        <file>ressources/recherchePetit.png</file>
+        <file>ressources/id.png</file>
+        <file>ressources/Plan de travail 35.png</file>
+    </qresource>
+</RCC>
