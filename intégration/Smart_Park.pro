@@ -1,7 +1,6 @@
 CONFIG   += console
 QT       += core gui sql charts network
 QT       += printsupport
-QT       += charts
 QT       += multimedia multimediawidgets
 QT       += serialport
 

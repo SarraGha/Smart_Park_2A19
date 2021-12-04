@@ -19,16 +19,14 @@
 #include <QDebug>
 #include <iostream>
 
-
-
 #include <QtCharts/QChartView>
 #include <QtGui>
 #include <QSystemTrayIcon>
 #include <QtCharts/QAbstractSeries>
 #include <QPieSeries>
 #include <QPieSlice>
-#include "qpieslice.h"
-
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
 
 #include "connexion.h"
 #include "visite.h"
@@ -36,8 +34,6 @@
 #include "exportexcel.h"
 #include "produit.h"
 #include "smtp.h"
-
-
 
 
 

@@ -1,6 +1,7 @@
 #include "produit.h"
 #include "QString"
 
+
 produit::produit(int ID_PRODUIT ,QString NOM_PRODUIT, QString LIBELLE_PRODUIT , double PRIX,
                 int NBRE_EXEMPLAIRE,int ID_FOURNISSEUR)
 {
@@ -142,12 +143,12 @@ void produit::alerte(QString nom_produit)
 }
 
 
-QSqlQueryModel * produit::GetProduits_inf_a_seuil(int seuil)
-{
-QSqlQueryModel *model=new QSqlQueryModel();
-QString Seuil=QString::number(seuil);
-model->setQuery("select * from GS_PRODUITS where NBRE_EXEMPLAIRE <"+Seuil);
-return model ;
+    QSqlQueryModel * produit::GetProduits_inf_a_seuil(int seuil)
+    {
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QString Seuil=QString::number(seuil);
+    model->setQuery("select * from PRODUITS where NBRE_EXEMPLAIRE <"+Seuil);
+    return model ;
 }
 
 

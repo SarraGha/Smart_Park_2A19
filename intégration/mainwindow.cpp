@@ -1,6 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QtCharts/QChartView>
+#include <QtGui>
+#include <QSystemTrayIcon>
+#include <QtCharts/QAbstractSeries>
+#include <QPieSeries>
+#include <QPieSlice>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -723,20 +732,18 @@ void MainWindow::on_lineEdit_rechercher_p_textChanged(const QString &arg1)
     ui->tableView_p->setModel((Ptmp.Recherche(arg1)));
 }
 
-
-
-
+QT_CHARTS_USE_NAMESPACE
 
 void MainWindow::on_pushButton_Stat_p_clicked()
 {
-    /*
+
     //ui->stackedWidget_2->setCurrentIndex(1);
        QSqlQueryModel * model= new QSqlQueryModel();
-       model->setQuery("select * from GS_PRODUITS where PRIX < 50 ");
+       model->setQuery("select * from PRODUITS where PRIX < 50 ");
        float salaire=model->rowCount();
-       model->setQuery("select * from GS_PRODUITS where PRIX  between 50 and 200 ");
+       model->setQuery("select * from PRODUITS where PRIX  between 50 and 200 ");
        float salairee=model->rowCount();
-       model->setQuery("select * from GS_PRODUITS where PRIX > 200 ");
+       model->setQuery("select * from PRODUITS where PRIX > 200 ");
        float salaireee=model->rowCount();
        float total=salaire+salairee+salaireee;
 
@@ -777,9 +784,8 @@ void MainWindow::on_pushButton_Stat_p_clicked()
        QChartView *chartView = new QChartView(chart);//creation de la fenetre de widget
        chartView->setRenderHint(QPainter::Antialiasing);
        chartView->resize(1000,500);
-       chartView->show();*/
+       chartView->show();
 }
-
 
 
 void MainWindow::on_pushButton_alertes_p_clicked()
