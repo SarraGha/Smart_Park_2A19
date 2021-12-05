@@ -2517,7 +2517,7 @@ border-radius: 3px;
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_animuax">
        <attribute name="title">
@@ -3095,12 +3095,8 @@ border-radius: 5px;</string>
           </property>
          </widget>
         </widget>
-        <zorder>Rech</zorder>
+        <zorder>splitter_12</zorder>
         <zorder>label_6</zorder>
-        <zorder>layoutWidget_5</zorder>
-        <zorder>layoutWidget_6</zorder>
-        <zorder>layoutWidget_7</zorder>
-        <zorder>layoutWidget_8</zorder>
         <zorder>splitter_4</zorder>
         <zorder>tab_animaux</zorder>
         <zorder>splitter_5</zorder>
@@ -3108,7 +3104,6 @@ border-radius: 5px;</string>
         <zorder>pushButton_Retour_A</zorder>
         <zorder>line1_2</zorder>
         <zorder>logo_V_2</zorder>
-        <zorder>label_3</zorder>
         <zorder>splitter_3</zorder>
         <zorder>splitter_10</zorder>
         <zorder>splitter_2</zorder>
@@ -3236,7 +3231,7 @@ border-radius: 5px;</string>
          <rect>
           <x>20</x>
           <y>160</y>
-          <width>1261</width>
+          <width>1241</width>
           <height>631</height>
          </rect>
         </property>
