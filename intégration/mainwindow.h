@@ -34,6 +34,10 @@
 #include "exportexcel.h"
 #include "produit.h"
 #include "smtp.h"
+#include "animaux.h"
+#include "PDF.h"
+#include "repas.h"
+#include "Carte_RFID.h"
 
 
 
@@ -137,6 +141,28 @@ private slots:
 
     void on_pushButton_retourM_p_clicked();
 
+    void on_Ajout_Button_clicked();
+
+    void on_Rech_textChanged(const QString &arg1);
+
+    void on_Del_Button_clicked();
+
+    void on_Edit_Button_clicked();
+
+    void on_Genpdf_clicked();
+
+    void on_RechCage_clicked();
+
+    void on_infoSerarch_textChanged(const QString &arg1);
+
+    void on_lineEdit_id_A_textChanged(const QString &arg1);
+
+    void on_AjouterRepas_clicked();
+
+    void on_SuppRepas_clicked();
+
+    void readSerial();
+
 private:
     Ui::MainWindow *ui;
     /******Visite******/
@@ -162,6 +188,21 @@ private:
     Smtp* smtp;
     QString msg;
     QString mail;
+
+    /*******Animaux*****/
+    Animaux Ani;
+    QGraphicsItem *item;
+    QGraphicsScene *scene;
+    QSerialPort *arduino;
+    static const quint16 arduino_uno_vendor_ID = 9025;
+    static const quint16 arduino_uno_product_ID = 67;
+
+    QString arduino_port_name;
+    bool arduino_available;
+    QByteArray serialData;
+    QString serialBuffer;
+    QString parsed_data;
+    QString UID;
 
 
 };

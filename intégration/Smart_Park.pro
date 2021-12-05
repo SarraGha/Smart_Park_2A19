@@ -21,21 +21,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Carte_RFID.cpp \
+    PDF.cpp \
+    animaux.cpp \
     arduino.cpp \
     connexion.cpp \
     exportexcel.cpp \
     main.cpp \
     mainwindow.cpp \
     produit.cpp \
+    repas.cpp \
     smtp.cpp \
     visite.cpp
 
 HEADERS += \
+    Carte_RFID.h \
+    PDF.h \
+    animaux.h \
     arduino.h \
     connexion.h \
     exportexcel.h \
     mainwindow.h \
     produit.h \
+    repas.h \
     smtp.h \
     visite.h
 
