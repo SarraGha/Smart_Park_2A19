@@ -18,6 +18,7 @@
 #include <thread>
 #include <QDebug>
 #include <iostream>
+#include <QSqlRecord>
 
 #include <QtCharts/QChartView>
 #include <QtGui>
@@ -162,6 +163,10 @@ private slots:
     void on_SuppRepas_clicked();
 
     void readSerial();
+
+    void on_pushButton_map_p_clicked();
+
+    void on_pushButton_retourMap_p_clicked();
 
 private:
     Ui::MainWindow *ui;

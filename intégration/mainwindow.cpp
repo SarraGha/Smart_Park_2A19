@@ -81,9 +81,6 @@ MainWindow::MainWindow(QWidget *parent)
         Camera->unlock();
     });
 
-
-
-
     /************************************Produit************************************/
     ui->spinBox_p->setValue(5);//par defaut
     refresh();
@@ -126,7 +123,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //Arduino Sarra Yassmine
-    /*int ret=A.connect_arduino();
+   /*int ret=A.connect_arduino();
     switch (ret) {
     case(0):qDebug()<<"arduino is available and connected to :"<<A.getarduino_port_name();
         break;
@@ -134,11 +131,13 @@ MainWindow::MainWindow(QWidget *parent)
         break;
     case(-1):qDebug()<<"arduino is not available ";
         break;
-    }*/
-        /*QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update()));
+    }
+        QObject::connect(A.getserial(), SIGNAL(readyRead()), this, SLOT(update()));
         qDebug()<<"données reçus d'arduino"<<A.read_from_arduino();*/
+
+
     /*************Arduino Omar Rayen********************************/
-    arduino = new QSerialPort;
+   /* arduino = new QSerialPort;
     arduino_available = false;
     arduino_port_name = "";
     foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
@@ -173,6 +172,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     }
     else{QMessageBox::warning(this, "Port Error", "Couldn't find Arduino!");}
+    */
 
 
 }
@@ -198,7 +198,6 @@ void MainWindow::update()
         msgBoxArduino.setIcon(QMessageBox::Warning);
 
         msgBoxArduino.exec();
-        Sleep(100);
 
         if(msgBoxArduino.clickedButton()==bouttonOui){
             A.write_to_arduino("1");
@@ -223,21 +222,26 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_acceder_clicked()
 {
     QString userName = ui->identifiantAccueil->text();
-    QString password = ui->motDePasseAccueil->text();
-    if(userName=="admin" && password=="admin")
-    {
-        QMessageBox::information(this, "Accès", "Accès autorisé");
-        ui->tabWidget->setCurrentIndex(1);
-        ui->tabWidget->setTabEnabled(1, true);
-    }
-    else if(userName!="admin")
-    {
-        QMessageBox::warning(this, "Accès non autorisé!", "Vérifiez le nom d'utilisateur.");
-    }
-    else if(userName=="admin" && password!="admin")
-    {
-        QMessageBox::warning(this, "Accès non autorisé!", "nom d'utilisateur ou mot de passe incorrecte.");
-    }
+        QString password = ui->motDePasseAccueil->text();
+
+        QSqlQuery query;
+        query.prepare("Select * from comptes where identifiant= :userName and mdp= :password");
+        query.bindValue(":userName",userName);
+        query.bindValue(":password",password);
+        query.exec();
+        QSqlQueryModel * model = new QSqlQueryModel;
+        model->setQuery(query);
+        QSqlRecord record = model->record(0);
+        QString userNameR = record.value("identifiant").toString();
+        QString passwordR = record.value("mdp").toString();
+        if( userNameR == userName && passwordR == password && userName != "")
+        {
+            QMessageBox::information(this, "Accès", "Accès autorisé");
+            ui->tabWidget->setCurrentIndex(1);
+            ui->tabWidget->setTabEnabled(1, true);
+        }
+        else
+            QMessageBox::warning(this, "Accès non autorisé!", "nom d'utilisateur ou mot de passe incorrecte.");
 }
 
 
@@ -606,7 +610,6 @@ void MainWindow::on_pushButton_Retour_P_clicked()
     ui->tabWidget->setTabEnabled(3, false);
 }
 
-
 void MainWindow::on_acces_A_clicked()
 {
     ui->tabWidget->setCurrentIndex(4);
@@ -733,8 +736,8 @@ void MainWindow::on_pushButton_supprimer_p_clicked()
         QMessageBox::information(nullptr,QObject::tr("OK"),
                 QObject::tr("Suppression effectuée\n"
                             "Click Cancel non to exit.") , QMessageBox :: Cancel);
-       //ui->tableView->setModel((Ptmp.afficher()));//refrerch
-       refresh();
+       ui->tableView_p->setModel((Ptmp.afficher()));//refrerch
+       //refresh();
         }
         else
             QMessageBox::critical(nullptr,QObject::tr("Not OK"),
@@ -755,20 +758,19 @@ void MainWindow::on_pushButton_modifier_p_clicked()
     produit p(ID_PRODUITS, NOM_PRODUIT , LIBELLE_PRODUIT , PRIX, NBRE_EXEMPLAIRE ,ID_FOURNISSEUR);
     bool test=p.modifier(ID_PRODUITS);//appel a la methode modifier
     if (test)
-{
-QMessageBox::information(nullptr,QObject::tr("OK"),
-        QObject::tr("Modification effectuée\n"
-                    "Click Cancel non to exit.") , QMessageBox :: Cancel);
+    {
+        QMessageBox::information(nullptr,QObject::tr("OK"),
+                QObject::tr("Modification effectuée\n"
+                            "Click Cancel non to exit.") , QMessageBox :: Cancel);
 
-//ui->tableView->setModel((Ptmp.afficher()));
-refresh();
-
-}
-else
-    QMessageBox::critical(nullptr,QObject::tr("Not OK"),
-                          QObject::tr("Modification non effectuée.\n"
-                                      "Click Cancel to exit."),QMessageBox::Cancel);
-ui->tableView_p->setModel((Ptmp.afficher()));
+        ui->tableView_p->setModel((Ptmp.afficher()));
+        //refresh();
+    }
+    else
+        QMessageBox::critical(nullptr,QObject::tr("Not OK"),
+                              QObject::tr("Modification non effectuée.\n"
+                                          "Click Cancel to exit."),QMessageBox::Cancel);
+    ui->tableView_p->setModel((Ptmp.afficher()));
 }
 
 /*****tris*****/
@@ -879,6 +881,26 @@ void MainWindow::on_send_p_clicked()
                                          "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
+
+
+void MainWindow::on_pushButton_map_p_clicked()
+{
+
+    ui->stackedWidget_p->setCurrentIndex(4);
+    QImage image(":/ressources/Plan Rayon.png");
+    item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+    scene = new QGraphicsScene(this);
+    ui->Map_Rayon->setScene(scene);
+    scene->addItem(item);
+
+}
+
+void MainWindow::on_pushButton_retourMap_p_clicked()
+{
+    ui->stackedWidget_p->setCurrentIndex(0);
+}
+
+
 /**********Animaux**************/
 
 void MainWindow::on_Ajout_Button_clicked()
@@ -981,7 +1003,7 @@ void MainWindow::on_Edit_Button_clicked()
 
 void MainWindow::on_Genpdf_clicked()
 {
-    pdf("E:/Downloads/ProjetC++/Project/animaux.pdf");
+    pdf("‪C:/Users/MSI/Documents/PDF animalanimaux.pdf");
 }
 
 void MainWindow::on_RechCage_clicked()
@@ -1084,3 +1106,5 @@ void MainWindow::readSerial()
     }
 
 }
+
+

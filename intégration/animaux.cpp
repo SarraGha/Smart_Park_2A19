@@ -30,10 +30,12 @@ void Animaux::setnumCage(int numCage){this->numCage=numCage;}
 void Animaux::setType(QString type){this->type=type;}
 void Animaux::setNouriture(QString nouriture){this->nouriture=nouriture;}
 void Animaux::setReclam(QString reclam){this->reclam=reclam;}
+
 bool Animaux::ajouterA()
 {
     QSqlQuery query;
-    query.prepare("insert into ANIMAUX (type, numero_cage, nouriture, Age)""values( :type, :numero_cage, :nouriture, :age)");
+    query.prepare("insert into ANIMAUX ( type, numero_cage, nouriture, Age)""values(:type, :numero_cage, :nouriture, :age)");
+    query.bindValue(":id", id);
     query.bindValue(":type", type);
     query.bindValue(":numero_cage", numCage);
     query.bindValue(":nouriture", nouriture);

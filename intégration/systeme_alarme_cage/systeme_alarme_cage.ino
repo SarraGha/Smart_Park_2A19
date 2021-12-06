@@ -20,8 +20,8 @@ void setup() {
 void loop() {
  
       if(digitalRead(PIN_Capteur)==HIGH){
-        Serial.println('1');
-        delay(2000);
+        Serial.print('1');
+        delay(3000);
       }
       /*if(digitalRead(PIN_Capteur)==LOW){
         Serial.println('0');
@@ -33,12 +33,12 @@ void loop() {
     {
       digitalWrite(PIN_LED_ROUGE, HIGH);
       tone(13,900);
-      delay(2000);
+      delay(3000);
       noTone(13);
       digitalWrite(PIN_LED_ROUGE, LOW);
       
     }  
-    /*exit(0);*/
+    delay(1000);
   }
   
 }

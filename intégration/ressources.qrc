@@ -7,7 +7,6 @@
         <file>ressources/mise à jour.png</file>
         <file>ressources/pdf.png</file>
         <file>ressources/recherchePetit.png</file>
-        <file>ressources/id.png</file>
         <file>ressources/Plan de travail 35.png</file>
         <file>ressources/logo_App_1.png</file>
         <file>ressources/retour.png</file>
@@ -22,5 +21,8 @@
         <file>ressources/9.jpg</file>
         <file>ressources/Info.txt</file>
         <file>ressources/Plan.jpg</file>
+        <file>ressources/Plan de travail 48.png</file>
+        <file>ressources/id2.png</file>
+        <file>ressources/Plan Rayon.png</file>
     </qresource>
 </RCC>

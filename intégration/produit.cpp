@@ -139,7 +139,7 @@ void produit::alerte(QString nom_produit)
     QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
 
     notifyIcon->show();
-    notifyIcon->showMessage("Defaut produits ","nbr dexmp du produit "+nom_produit+" inferieur au seuil",QSystemTrayIcon::Information,15000);
+    notifyIcon->showMessage("Alerte seuils de produits ","Nombreux Seuils de produits sont inferieurs au seuil declaré ",QSystemTrayIcon::Information,15000);
 }
 
 

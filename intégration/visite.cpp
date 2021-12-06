@@ -149,42 +149,6 @@ QSqlQueryModel * Visite::trier(QString critere)
 
 void Visite::genererPDF(Visite V)
 {
-    /*
-    QString nomFichier = QFileDialog::getSaveFileName(0, QString::fromUtf8("Générer PDF"), QCoreApplication::applicationDirPath(), "*.pdf");
-
-        int id(20);
-        if (!nomFichier.isEmpty())
-        {
-            if (QFileInfo(nomFichier).suffix().isEmpty())
-                nomFichier.append(".pdf");
-
-            QPrinter printer(QPrinter::HighResolution);
-            printer.setOutputFormat(QPrinter::PdfFormat);
-            printer.setOutputFileName(nomFichier);
-            printer.setOrientation(QPrinter::Portrait);
-            printer.setPaperSize(QPrinter::A4);
-            printer.setPageSize(QPrinter::A4);
-            printer.setPageMargins(15,15,15,15,QPrinter::Millimeter);
-
-            qDebug() << "Page px :" << printer.pageRect() << printer.paperRect();
-            qDebug() << "Page mm :" << printer.pageRect(QPrinter::Millimeter) << printer.paperRect(QPrinter::Millimeter);
-            qreal left, top, right, bottom;
-            printer.getPageMargins(&left, &top, &right, &bottom, QPrinter::DevicePixel);
-            qDebug() << "Marges px :" << left << top << right << bottom;
-            printer.getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
-            qDebug() << "Marges mm :" << left << top << right << bottom;
-
-            QPainter painter(&printer);
-
-
-                painter.drawText(0, printer.pageRect().y()*2, QString::fromUtf8("TICKET"));
-                painter.drawText(1, printer.pageRect().y()*3, QString::fromUtf8("IDENTIFIANT TICKET:"));
-                painter.drawText(3, printer.pageRect().y()*4, QString::fromUtf8("PRIX TICKET:"));
-                painter.drawText(4, printer.pageRect().y()*5, QString::fromUtf8("IDENTIFIANT VISITEUR"));
-        }
-*/
-
-
     QString nomFichier = QFileDialog::getSaveFileName(0, QString::fromUtf8("Générer Ticket PDF"), QCoreApplication::applicationDirPath(), "*.pdf");
     QPdfWriter writer(nomFichier);
     writer.setPageSize(QPagedPaintDevice::A4);
