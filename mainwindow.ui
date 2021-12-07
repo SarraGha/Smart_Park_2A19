@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1021</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gestion missions</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>50</y>
+      <width>761</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Gestion_employes</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>801</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Gestion Employe</string>
+       </attribute>
+       <widget class="QPushButton" name="pb_ajouter">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>150</y>
+          <width>96</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #ffffff;
+border: 3px solid #010203;
+font: 8pt &quot;MS Reference Sans Serif&quot;;
+border-radius: 15px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #c4c9c7);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #010203);
+}
+
+ QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
+}</string>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="le_first">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>190</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+Font-size: 15px;
+color: white
+
+};
+
+</string>
+        </property>
+        <property name="text">
+         <string>Firstname</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="idemp">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>160</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+border-radius:9px;
+border: 2px solid #000000;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.0, fy: -0.0,
+radius: 1.89, stop: 0 #ffffff, stop: 1 #999);
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>160</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+Font-size: 15px;
+color: white
+
+};
+
+</string>
+        </property>
+        <property name="text">
+         <string>ID Employe</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_supprimer">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>260</y>
+          <width>96</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #ffffff;
+border: 3px solid #010203;
+font: 8pt &quot;MS Reference Sans Serif&quot;;
+border-radius: 15px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #c4c9c7);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #010203);
+}
+
+ QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
+}</string>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pb_modifier">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>200</y>
+          <width>96</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #ffffff;
+border: 3px solid #010203;
+font: 8pt &quot;MS Reference Sans Serif&quot;;
+border-radius: 15px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #c4c9c7);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #010203);
+}
+
+ QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
+}</string>
+        </property>
+        <property name="text">
+         <string>Modifier</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="sallaire">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>280</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="le_salaire">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>290</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+Font-size: 15px;
+color: white
+
+};
+
+</string>
+        </property>
+        <property name="text">
+         <string>Sallaire</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="le_last">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>220</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+Font-size: 15px;
+color: white
+
+};
+
+</string>
+        </property>
+        <property name="text">
+         <string>Lastname</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>250</y>
+          <width>47</width>
+          <height>13</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+Font-size: 15px;
+color: white
+
+};
+
+</string>
+        </property>
+        <property name="text">
+         <string>Grade</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="last">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>220</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+border-radius:9px;
+border: 2px solid #000000;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.0, fy: -0.0,
+radius: 1.89, stop: 0 #ffffff, stop: 1 #999);
+}</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="first">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>190</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit
+{
+border-radius:9px;
+border: 2px solid #000000;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.0, fy: -0.0,
+radius: 1.89, stop: 0 #ffffff, stop: 1 #999);
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="le_grade">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>-60</y>
+          <width>801</width>
+          <height>571</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QWidget {
+    background-color: #117A65;
+    color: #117A65;
+}
+QTableView{border: 6px solid #117A65 ; /*other code about padding background stc*/ ;}
+QHeaderView::section {
+    background-color: #117A65;
+    padding: 4px;
+    border: 1px solid #117A65;
+    font-size: 8pt;
+}
+
+QTableWidget {
+    gridline-color: #117A65;
+    font-size: 9pt;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #117A65;
+    border: 1px solid #117A65;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>150</y>
+          <width>211</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>330</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>trier par -&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>180</y>
+          <width>171</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rechercher Par Identifiant</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="grade">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>250</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tab_employes">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>10</y>
+          <width>701</width>
+          <height>131</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>320</y>
+          <width>96</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #ffffff;
+border: 3px solid #010203;
+font: 8pt &quot;MS Reference Sans Serif&quot;;
+border-radius: 15px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #c4c9c7);
+min-width: 80px;
+}
+
+QPushButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 3, stop: 0 #010203, stop: 1 #010203);
+}
+
+ QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 3, stop: 0 #c4c9c7, stop: 1 #c4c9c7);
+}</string>
+        </property>
+        <property name="text">
+         <string>PDF</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="recherchee_2">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>250</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Recherche</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineRech">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>220</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBox">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>330</y>
+          <width>73</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>choisir</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>identifiant</string>
+         </property>
+        </item>
+       </widget>
+       <zorder>le_grade</zorder>
+       <zorder>pb_ajouter</zorder>
+       <zorder>le_first</zorder>
+       <zorder>idemp</zorder>
+       <zorder>label</zorder>
+       <zorder>pb_supprimer</zorder>
+       <zorder>pb_modifier</zorder>
+       <zorder>sallaire</zorder>
+       <zorder>le_salaire</zorder>
+       <zorder>le_last</zorder>
+       <zorder>label_8</zorder>
+       <zorder>last</zorder>
+       <zorder>first</zorder>
+       <zorder>tableWidget</zorder>
+       <zorder>label_2</zorder>
+       <zorder>label_3</zorder>
+       <zorder>grade</zorder>
+       <zorder>tab_employes</zorder>
+       <zorder>pushButton</zorder>
+       <zorder>recherchee_2</zorder>
+       <zorder>lineRech</zorder>
+       <zorder>comboBox</zorder>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1021</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>Gestion des livres</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
